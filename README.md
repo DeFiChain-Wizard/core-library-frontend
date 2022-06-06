@@ -2,6 +2,12 @@
 
 This library can be used to access and retrieve certain data that should be available from within the UI.
 
+# Installation
+
+```
+npm i @defichainwizard/core
+```
+
 # What can be done with this library
 
 - Store and read the seed phrase (encrypted)
@@ -13,3 +19,10 @@ This library can be used to access and retrieve certain data that should be avai
 - Read data from your wallet (e.g. tokens, ratio,...)
 
 # How to use it
+
+You can import the classes to use like this:
+
+```
+import {DFIVault, DFIWallet, DFISeedUtility} from '@defichainwizard/core'
+
+```
