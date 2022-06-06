@@ -5,11 +5,8 @@ import {
 import {
   entropyAsMnemonic,
   mnemonicAsEntropy,
-  generateMnemonicWords,
 } from "@defichain/jellyfish-wallet-mnemonic";
 import { isStringNullOrEmpty } from "../utils/helpers";
-
-const KEY = "ENCRYPTED_MNEMONIC_STORAGE.entropy";
 
 /**
  * Raw mnemonic words encryption implementation reside in light wallet

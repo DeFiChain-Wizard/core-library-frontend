@@ -53,7 +53,12 @@ class DFISeedUtility implements SeedUtility {
    * @param passphrase The passphrase to encrypt the seed.
    */
   async setSeed(seed: string[], passphrase: string) {
-    this.storage.storeSeed(await MnemonicStorage.encrypt(seed, passphrase));
+    // clean up seed first
+    const seedCleanedUp = seed.map((words) => words.trim());
+    //store now
+    this.storage.storeSeed(
+      await MnemonicStorage.encrypt(seedCleanedUp, passphrase)
+    );
   }
 }
 
