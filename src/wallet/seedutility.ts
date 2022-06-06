@@ -12,14 +12,7 @@ interface SeedUtility {
 
 class DFISeedUtility implements SeedUtility {
   private storage = new DFIStorageUtility();
-  /**
-   * The Seed Utility can only be instantiated when the 24 seed words have been provided - together with a passphrase to encrypt the seed.
-   * @param seed The seed as array of words.
-   * @param passphrase The passphrase to encrypt the seed.
-   */
-  constructor(seed: string[], passphrase: string) {
-    this.setSeed(seed, passphrase);
-  }
+
   /**
    * Returns the seed as array.
    * @param passphrase The passphrase to decrypt the seed.

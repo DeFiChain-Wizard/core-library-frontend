@@ -18,11 +18,10 @@ npm i @defichainwizard/core
 - Read basic Blockchain-Data
 - Read data from your wallet (e.g. tokens, ratio,...)
 
-# How to use it
+# Basic Usage
 
 You can import the classes to use like this:
 
-```
-import {DFIVault, DFIWallet, DFISeedUtility} from '@defichainwizard/core'
-
+```ts
+import { DFIVault, DFIWallet, DFISeedUtility } from "@defichainwizard/core";
 ```
