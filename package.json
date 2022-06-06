@@ -3,7 +3,6 @@
     "version": "0.0.1",
     "description": "The npm core library for the frontend",
     "main": "./dist/index.js",
-
     "scripts": {
         "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +21,9 @@
     "bugs": {
         "url": "https://github.com/DeFiChain-Wizard/core-library-frontend/issues"
     },
-    "homepage": "https://github.com/DeFiChain-Wizard/core-library-frontend#readme"
+    "homepage": "https://github.com/DeFiChain-Wizard/core-library-frontend#readme",
+    "dependencies": {
+        "@defichain/jellyfish-wallet-encrypted": "^2.45.10",
+        "@defichain/jellyfish-wallet-mnemonic": "^2.45.10"
+    }
 }
