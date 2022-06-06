@@ -1,6 +1,6 @@
 {
     "name": "@defichainwizard/core",
-    "version": "0.0.6",
+    "version": "0.0.9",
     "description": "The npm core library for the frontend",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -25,6 +25,9 @@
     "homepage": "https://github.com/DeFiChain-Wizard/core-library-frontend#readme",
     "dependencies": {
         "@defichain/jellyfish-wallet-encrypted": "^2.45.10",
-        "@defichain/jellyfish-wallet-mnemonic": "^2.45.10"
+        "@defichain/jellyfish-wallet-mnemonic": "^2.45.10",
+        "@defichain/whale-api-client": "^2.45.10",
+        "local-storage": "^2.0.0",
+        "localstorage-slim": "^2.3.0"
     }
 }
