@@ -17,6 +17,7 @@ interface Wallet {
   getNetwork: () => string;
   getVaults: () => Promise<DFIVault[]>;
   getVault: (id: string) => Promise<DFIVault>;
+  getCurrentVault: () => Promise<DFIVault>;
 }
 
 /**
