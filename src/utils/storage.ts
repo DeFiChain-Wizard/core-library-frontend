@@ -6,10 +6,12 @@ const SEED_KEY = "seed",
   VAULT_KEY = "vault";
 interface StorageUtility {
   getAddress: () => string;
+  getCurrentVault: () => string;
   getNetwork: () => string;
   getSeed: () => string;
   storeNetwork: (network: string) => void;
   storeSeed: (seed: string) => void;
+  storeCurrentVault: (vault: string) => void;
   storeAddress: (address: string) => void;
 }
 class DFIStorageUtility implements StorageUtility {
@@ -34,6 +36,14 @@ class DFIStorageUtility implements StorageUtility {
 
   storeSeed(seed: string) {
     ls.set(SEED_KEY, seed);
+  }
+
+  getCurrentVault() {
+    return `${ls.get(VAULT_KEY)}`;
+  }
+
+  storeCurrentVault(vault: string) {
+    ls.set(VAULT_KEY, vault);
   }
 }
 

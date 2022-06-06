@@ -1,7 +1,7 @@
 import { DFIVault } from "./vault";
 import { DFIStorageUtility } from "../utils/storage";
-import { MainNet, TestNet } from "@defichain/jellyfish-network";
-import { ApiPagedResponse, WhaleApiClient } from "@defichain/whale-api-client";
+import { MainNet } from "@defichain/jellyfish-network";
+import { WhaleApiClient } from "@defichain/whale-api-client";
 import { OCEAN_URL, OCEAN_VERSION } from "../utils/configuration";
 import {
   LoanVaultActive,
@@ -70,6 +70,19 @@ class DFIWallet implements Wallet {
     if (dfiVaults.length === 0)
       throw new Error(`No vault with given ID found - ID: ${id}.`);
     return new DFIVault(dfiVaults[0]);
+  }
+
+  /**
+   * Returns the current vault.
+   * @returns The vault currently stored vault to be used for management.
+   */
+  async getCurrentVault(): Promise<DFIVault> {
+    const id = this.storage.getCurrentVault();
+    if (!id)
+      throw new Error(
+        "You tried to get the current vault, but no stored vault was found!"
+      );
+    return this.getVault(id);
   }
 
   /**
