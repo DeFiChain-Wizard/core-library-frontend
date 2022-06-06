@@ -18,6 +18,7 @@ interface Wallet {
   getVaults: () => Promise<DFIVault[]>;
   getVault: (id: string) => Promise<DFIVault>;
   getCurrentVault: () => Promise<DFIVault>;
+  setCurrentVault: (id: string) => void;
 }
 
 /**
@@ -84,6 +85,14 @@ class DFIWallet implements Wallet {
         "You tried to get the current vault, but no stored vault was found!"
       );
     return this.getVault(id);
+  }
+
+  /**
+   * Stores the current vault to be managed by the wizard.
+   * @param id The id of the vault to be used as current vault.
+   */
+  setCurrentVault(id: string) {
+    this.storage.storeCurrentVault(id);
   }
 
   /**
