@@ -17,10 +17,15 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 ### Methods
 
 - [getAddress](Wallet.md#getaddress)
+- [getClient](Wallet.md#getclient)
 - [getCurrentVault](Wallet.md#getcurrentvault)
 - [getNetwork](Wallet.md#getnetwork)
+- [getNetworkAsString](Wallet.md#getnetworkasstring)
+- [getUTXOBalance](Wallet.md#getutxobalance)
 - [getVault](Wallet.md#getvault)
 - [getVaults](Wallet.md#getvaults)
+- [listTokens](Wallet.md#listtokens)
+- [sendTransaction](Wallet.md#sendtransaction)
 - [setCurrentVault](Wallet.md#setcurrentvault)
 
 ## Constructors
@@ -36,11 +41,11 @@ You need provide the DFI address to instantiate a new wallet.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `address` | `string` | `undefined` | The DFI address for the wallet. |
-| `network` | ``"mainnet"`` \| ``"testnet"`` \| ``"regtest"`` | `MainNet.name` | - |
+| `network` | `string` | `"mainnet"` | - |
 
 #### Defined in
 
-[wallet/wallet.ts:35](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L35)
+[wallet/wallet.ts:42](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L42)
 
 ## Methods
 
@@ -62,19 +67,33 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[wallet/wallet.ts:58](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L58)
+[wallet/wallet.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L73)
+
+___
+
+### getClient
+
+▸ **getClient**(): `WhaleApiClient`
+
+#### Returns
+
+`WhaleApiClient`
+
+#### Defined in
+
+[wallet/wallet.ts:54](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L54)
 
 ___
 
 ### getCurrentVault
 
-▸ **getCurrentVault**(): `Promise`<[`Vault`](Vault.md)\>
+▸ **getCurrentVault**(): `Promise`<`LoanVaultActive`\>
 
 Returns the current vault.
 
 #### Returns
 
-`Promise`<[`Vault`](Vault.md)\>
+`Promise`<`LoanVaultActive`\>
 
 The vault currently stored vault to be used for management.
 
@@ -84,13 +103,27 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L81)
+[wallet/wallet.ts:96](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L96)
 
 ___
 
 ### getNetwork
 
-▸ **getNetwork**(): `string`
+▸ **getNetwork**(): `Network`
+
+#### Returns
+
+`Network`
+
+#### Defined in
+
+[wallet/wallet.ts:65](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L65)
+
+___
+
+### getNetworkAsString
+
+▸ **getNetworkAsString**(): `string`
 
 Returns the network used for this wallet ('mainnet', 'testnet',...)
 
@@ -102,17 +135,35 @@ The network used for this wallet.
 
 #### Implementation of
 
-DFIWallet.getNetwork
+DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[wallet/wallet.ts:50](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L50)
+[wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L61)
+
+___
+
+### getUTXOBalance
+
+▸ **getUTXOBalance**(): `Promise`<`Number`\>
+
+#### Returns
+
+`Promise`<`Number`\>
+
+#### Implementation of
+
+DFIWallet.getUTXOBalance
+
+#### Defined in
+
+[wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L171)
 
 ___
 
 ### getVault
 
-▸ **getVault**(`id`): `Promise`<[`Vault`](Vault.md)\>
+▸ **getVault**(`id`): `Promise`<`LoanVaultActive`\>
 
 Returns a certain vault used for this wallet.
 
@@ -124,7 +175,7 @@ Returns a certain vault used for this wallet.
 
 #### Returns
 
-`Promise`<[`Vault`](Vault.md)\>
+`Promise`<`LoanVaultActive`\>
 
 The vault used for this wallet.
 
@@ -134,19 +185,19 @@ DFIWallet.getVault
 
 #### Defined in
 
-[wallet/wallet.ts:67](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L67)
+[wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L82)
 
 ___
 
 ### getVaults
 
-▸ **getVaults**(): `Promise`<[`Vault`](Vault.md)[]\>
+▸ **getVaults**(): `Promise`<`LoanVaultActive`[]\>
 
 Returns all vaults that have been created in this wallet.
 
 #### Returns
 
-`Promise`<[`Vault`](Vault.md)[]\>
+`Promise`<`LoanVaultActive`[]\>
 
 All vaults found for this wallet.
 
@@ -156,7 +207,53 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[wallet/wallet.ts:112](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L112)
+[wallet/wallet.ts:149](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L149)
+
+___
+
+### listTokens
+
+▸ **listTokens**(): `Promise`<`AddressToken`[]\>
+
+#### Returns
+
+`Promise`<`AddressToken`[]\>
+
+#### Implementation of
+
+DFIWallet.listTokens
+
+#### Defined in
+
+[wallet/wallet.ts:162](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L162)
+
+___
+
+### sendTransaction
+
+▸ **sendTransaction**(`data`, `seed`, `passphrase`): `Promise`<`string`\>
+
+Sends a custom transaction to your address, so that the backend can pick it up.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `string` | the data to be included in the custom transaction. |
+| `seed` | [`Seed`](Seed.md) | - |
+| `passphrase` | `string` | - |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Implementation of
+
+DFIWallet.sendTransaction
+
+#### Defined in
+
+[wallet/wallet.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L117)
 
 ___
 
@@ -182,4 +279,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:94](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/wallet.ts#L94)
+[wallet/wallet.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/wallet.ts#L109)

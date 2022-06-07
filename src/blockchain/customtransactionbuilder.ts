@@ -67,8 +67,6 @@ class CustomTXBuilder extends P2WPKHTxnBuilder {
             if (intervalID !== undefined) {
               clearInterval(intervalID);
             }
-            console.log("Done");
-            console.log(txId);
             resolve(txId);
           })
           .catch((e) => {
@@ -76,7 +74,6 @@ class CustomTXBuilder extends P2WPKHTxnBuilder {
               if (intervalID !== undefined) {
                 clearInterval(intervalID);
               }
-              console.error(e);
               error(e);
             }
           });

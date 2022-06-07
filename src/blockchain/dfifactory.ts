@@ -41,7 +41,6 @@ class DFIFactory {
       network
     );
     const txn = await builder.getCustomTx(data, await account.getScript());
-    console.log("Custom transaction built!");
     return await builder.sendTransaction({
       txn,
       initialWaitTime: 2000,
@@ -56,14 +55,11 @@ class DFIFactory {
     seed: Seed,
     passphrase: string
   ): Promise<WhaleWalletAccount> {
-    console.log("getAccount!");
     const wallet = DFIFactory.getWallet(
       await seed.asArray(passphrase),
       dfiWallet.getNetwork(),
       dfiWallet.getClient()
     );
-
-    console.log(wallet);
 
     const jellyWallet = wallet.wallet;
 

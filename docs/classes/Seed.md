@@ -2,6 +2,10 @@
 
 # Class: Seed
 
+The Seed provides all operations for the seed management. It will implicitely encrypt and store the seed.
+
+This API only support addresses from the light wallet, which means that you will have to provide the 24 words.
+
 ## Implements
 
 - `DFISeed`
@@ -17,13 +21,27 @@
 - [asArray](Seed.md#asarray)
 - [asEncrypted](Seed.md#asencrypted)
 - [asString](Seed.md#asstring)
-- [set](Seed.md#set)
 
 ## Constructors
 
 ### constructor
 
-• **new Seed**()
+• **new Seed**(`seed`, `passphrase`)
+
+The Seed needs to be initialized with the seed and the passphrase.
+
+**`throws`** Error when the provided seed is not valid (array must have at least 24 words)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `seed` | `string`[] | The seed to be stored. |
+| `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
+
+#### Defined in
+
+[wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/seed.ts#L27)
 
 ## Methods
 
@@ -31,7 +49,11 @@
 
 ▸ **asArray**(`passphrase`): `Promise`<`string`[]\>
 
-Returns the seed as array.
+Returns the seed as decrypted array.
+
+Please don't call this method right after the instantiation of the class.
+
+It will crash - storing the encrypted seed during the instantiation might take 1-2 seconds.
 
 #### Parameters
 
@@ -51,7 +73,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[wallet/seedutility.ts:21](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/seedutility.ts#L21)
+[wallet/seed.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/seed.ts#L61)
 
 ___
 
@@ -59,7 +81,11 @@ ___
 
 ▸ **asEncrypted**(): `string`
 
-Returns the encrypted seed as stored.
+Returns the encrypted seed.
+
+Please don't call this method right after the instantiation of the class.
+
+It will crash - storing the encrypted seed during the instantiation might take 1-2 seconds.
 
 #### Returns
 
@@ -73,7 +99,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[wallet/seedutility.ts:40](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/seedutility.ts#L40)
+[wallet/seed.ts:94](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/seed.ts#L94)
 
 ___
 
@@ -81,7 +107,11 @@ ___
 
 ▸ **asString**(`passphrase`): `Promise`<`string`\>
 
-Returns the seed as comma-separated string.
+Returns the seed as decrypted comma-separated string.
+
+Please don't call this method right after the instantiation of the class.
+
+It will crash - storing the encrypted seed during the instantiation might take 1-2 seconds.
 
 #### Parameters
 
@@ -101,31 +131,4 @@ DFISeed.asString
 
 #### Defined in
 
-[wallet/seedutility.ts:30](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/seedutility.ts#L30)
-
-___
-
-### set
-
-▸ **set**(`seed`, `passphrase`): `Promise`<`void`\>
-
-Sets the seed, which will be encrypted and stored in local storage.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `seed` | `string`[] | The seed as array of words. |
-| `passphrase` | `string` | The passphrase to encrypt the seed. |
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Implementation of
-
-DFISeed.set
-
-#### Defined in
-
-[wallet/seedutility.ts:48](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/8835410/src/wallet/seedutility.ts#L48)
+[wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ab6b3c/src/wallet/seed.ts#L81)

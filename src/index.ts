@@ -1,1 +1,1 @@
-export { Vault, Wallet, Seed } from "./wallet";
+export { Wallet, Seed } from "./wallet";

@@ -22,7 +22,6 @@ class Transaction implements DFITransaction {
   }
 
   async send(data: string): Promise<string> {
-    console.log("Sending transaction");
     const transaction = await DFIFactory.sendCustomTransactionWithData(
       data,
       this.client,

@@ -7,5 +7,4 @@
 ### Classes
 
 - [Seed](classes/Seed.md)
-- [Vault](classes/Vault.md)
 - [Wallet](classes/Wallet.md)

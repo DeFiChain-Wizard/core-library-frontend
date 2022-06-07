@@ -1,4 +1,3 @@
-import { Vault } from "./vault";
 import { DFIStorageUtility } from "../utils/storage";
 import { MainNet, TestNet, Network } from "@defichain/jellyfish-network";
 import { WhaleApiClient } from "@defichain/whale-api-client";
@@ -11,6 +10,7 @@ import {
 import { Transaction } from "./transaction";
 import { DFIFactory } from "../blockchain/dfifactory";
 import { Seed } from "./seed";
+import { AddressToken } from "@defichain/whale-api-client/dist/api/address";
 
 /**
  * Wallet interface.
@@ -18,9 +18,11 @@ import { Seed } from "./seed";
 interface DFIWallet {
   getAddress: () => string;
   getNetworkAsString: () => string;
-  getVaults: () => Promise<Vault[]>;
-  getVault: (id: string) => Promise<Vault>;
-  getCurrentVault: () => Promise<Vault>;
+  getVaults: () => Promise<LoanVaultActive[]>;
+  getVault: (id: string) => Promise<LoanVaultActive>;
+  getCurrentVault: () => Promise<LoanVaultActive>;
+  listTokens: () => Promise<AddressToken[]>;
+  getUTXOBalance: () => Promise<Number>;
   setCurrentVault: (id: string) => void;
   sendTransaction: (data: string, seed: Seed, passphrase: string) => void;
 }
@@ -77,21 +79,21 @@ class Wallet implements DFIWallet {
    * @param id The ID of the vault to be used.
    * @returns The vault used for this wallet.
    */
-  async getVault(id: string): Promise<Vault> {
+  async getVault(id: string): Promise<LoanVaultActive> {
     // get vaults and filter active ones
     const dfiVaults = (await this.client.address.listVault(this.getAddress()))
       .filter(this.isActive)
       .filter((vault) => vault.vaultId === id);
     if (dfiVaults.length === 0)
       throw new Error(`No vault with given ID found - ID: ${id}.`);
-    return new Vault(dfiVaults[0]);
+    return dfiVaults[0];
   }
 
   /**
    * Returns the current vault.
    * @returns The vault currently stored vault to be used for management.
    */
-  async getCurrentVault(): Promise<Vault> {
+  async getCurrentVault(): Promise<LoanVaultActive> {
     const id = this.storage.getCurrentVault();
     if (!id)
       throw new Error(
@@ -144,17 +146,31 @@ class Wallet implements DFIWallet {
    * Returns all vaults that have been created in this wallet.
    * @returns All vaults found for this wallet.
    */
-  async getVaults(): Promise<Vault[]> {
+  async getVaults(): Promise<LoanVaultActive[]> {
     // get vaults and filter active ones
     const dfiVaults = (
       await this.client.address.listVault(this.getAddress())
     ).filter(this.isActive);
 
-    let vaults: Vault[] = [];
+    let vaults: LoanVaultActive[] = [];
     for (let vault of dfiVaults) {
-      vaults.push(new Vault(vault));
+      vaults.push(vault);
     }
     return vaults;
+  }
+
+  async listTokens(): Promise<AddressToken[]> {
+    const tokens = await this.client.address.listToken(this.getAddress(), 200);
+    const returnTokens: AddressToken[] = [];
+    tokens.map((token) => {
+      returnTokens.push(token);
+    });
+    return returnTokens;
+  }
+
+  async getUTXOBalance(): Promise<Number> {
+    const balance = await this.client.address.getBalance(this.getAddress());
+    return Number(balance);
   }
 }
 
