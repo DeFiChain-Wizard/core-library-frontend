@@ -10,6 +10,7 @@ import {
 } from "@defichain/whale-api-client/dist/api/loan";
 import { Transaction } from "./transaction";
 import { DFIFactory } from "../blockchain/dfifactory";
+import { Seed } from "./seed";
 
 /**
  * Wallet interface.
@@ -21,7 +22,7 @@ interface DFIWallet {
   getVault: (id: string) => Promise<Vault>;
   getCurrentVault: () => Promise<Vault>;
   setCurrentVault: (id: string) => void;
-  sendTransaction: (data: string) => void;
+  sendTransaction: (data: string, seed: Seed, passphrase: string) => void;
 }
 
 /**
@@ -111,10 +112,14 @@ class Wallet implements DFIWallet {
    * Sends a custom transaction to your address, so that the backend can pick it up.
    * @param data the data to be included in the custom transaction.
    */
-  async sendTransaction(data: string): Promise<string> {
+  async sendTransaction(
+    data: string,
+    seed: Seed,
+    passphrase: string
+  ): Promise<string> {
     const transaction = new Transaction({
       client: this.client,
-      account: await DFIFactory.getAccount(this, "test12344"),
+      account: await DFIFactory.getAccount(this, seed, passphrase),
       network: this.network,
     });
 

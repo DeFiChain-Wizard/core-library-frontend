@@ -8,6 +8,7 @@ const isStringNullOrEmpty = (value: string | string[]): boolean => {
   return value === undefined || value.length === 0;
 };
 
+const isSeedValid = (seed: string[]): boolean =>
+  !isStringNullOrEmpty(seed) && seed.length === 24;
 
-
-export { isStringNullOrEmpty };
+export { isStringNullOrEmpty, isSeedValid };

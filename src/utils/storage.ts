@@ -36,6 +36,7 @@ class DFIStorageUtility implements StorageUtility {
 
   storeSeed(seed: string) {
     ls.set(SEED_KEY, seed);
+    console.log("seed stored!");
   }
 
   getCurrentVault() {

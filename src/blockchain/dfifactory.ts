@@ -53,14 +53,17 @@ class DFIFactory {
 
   static async getAccount(
     dfiWallet: Wallet,
+    seed: Seed,
     passphrase: string
   ): Promise<WhaleWalletAccount> {
-    const seed = await new Seed().asArray(passphrase);
+    console.log("getAccount!");
     const wallet = DFIFactory.getWallet(
-      seed,
+      await seed.asArray(passphrase),
       dfiWallet.getNetwork(),
       dfiWallet.getClient()
     );
+
+    console.log(wallet);
 
     const jellyWallet = wallet.wallet;
 
