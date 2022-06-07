@@ -44,7 +44,7 @@ const someVault = await wallet.getVault(myVaultId);
 const tokens = await wallet.listTokens();
 
 // specify a certain vault to be used
-await wallet.setCurrentVault(someVauldId);
+await wallet.setCurrentVault(someVaultId);
 
 // returns the current vault to be used
 const vault = await wallet.getCurrentVault();
