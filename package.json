@@ -7,6 +7,7 @@
     "scripts": {
         "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
+        "docs": "npx typedoc --excludePrivate --plugin typedoc-plugin-markdown src/index.ts",
         "publish": "npm run build && npm publish --access public"
     },
     "repository": {
@@ -27,7 +28,12 @@
         "@defichain/jellyfish-wallet-encrypted": "^2.45.10",
         "@defichain/jellyfish-wallet-mnemonic": "^2.45.10",
         "@defichain/whale-api-client": "^2.45.10",
+        "@defichain/whale-api-wallet": "^2.45.10",
         "local-storage": "^2.0.0",
         "localstorage-slim": "^2.3.0"
+    },
+    "devDependencies": {
+        "typedoc": "^0.22.17",
+        "typedoc-plugin-markdown": "^3.12.1"
     }
 }

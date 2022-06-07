@@ -1,6 +1,6 @@
-import { DFIVault } from "./vault";
+import { Vault } from "./vault";
 import { DFIStorageUtility } from "../utils/storage";
-import { MainNet } from "@defichain/jellyfish-network";
+import { MainNet, TestNet, Network } from "@defichain/jellyfish-network";
 import { WhaleApiClient } from "@defichain/whale-api-client";
 import { OCEAN_URL, OCEAN_VERSION } from "../utils/configuration";
 import {
@@ -8,47 +8,59 @@ import {
   LoanVaultLiquidated,
   LoanVaultState,
 } from "@defichain/whale-api-client/dist/api/loan";
+import { Transaction } from "./transaction";
+import { DFIFactory } from "../blockchain/dfifactory";
 
 /**
  * Wallet interface.
  */
-interface Wallet {
+interface DFIWallet {
   getAddress: () => string;
-  getNetwork: () => string;
-  getVaults: () => Promise<DFIVault[]>;
-  getVault: (id: string) => Promise<DFIVault>;
-  getCurrentVault: () => Promise<DFIVault>;
+  getNetworkAsString: () => string;
+  getVaults: () => Promise<Vault[]>;
+  getVault: (id: string) => Promise<Vault>;
+  getCurrentVault: () => Promise<Vault>;
   setCurrentVault: (id: string) => void;
+  sendTransaction: (data: string) => void;
 }
 
 /**
  * The DFIWallet offers all functions to interact with the DFIWallet.
  */
-class DFIWallet implements Wallet {
-  private storage = new DFIStorageUtility();
-  private client: WhaleApiClient;
+class Wallet implements DFIWallet {
+  private readonly storage = new DFIStorageUtility();
+  private readonly client: WhaleApiClient;
+  private readonly network: Network;
   /**
    * You need provide the DFI address to instantiate a new wallet.
    *
    * @param address The DFI address for the wallet.
    */
-  constructor(address: string, network = MainNet.name) {
+  constructor(address: string, network = "mainnet") {
     this.storage.storeAddress(address);
     this.storage.storeNetwork(network);
+    this.network = network.toLowerCase() === "mainnet" ? MainNet : TestNet;
     this.client = new WhaleApiClient({
       url: OCEAN_URL,
       version: OCEAN_VERSION,
-      network,
+      network: this.network.name,
     });
     // store all vaults in localstorage as well
   }
 
+  getClient(): WhaleApiClient {
+    return this.client;
+  }
   /**
    * Returns the network used for this wallet ('mainnet', 'testnet',...)
    * @returns The network used for this wallet.
    */
-  getNetwork(): string {
+  getNetworkAsString(): string {
     return this.storage.getNetwork();
+  }
+
+  getNetwork(): Network {
+    return this.network;
   }
 
   /**
@@ -64,21 +76,21 @@ class DFIWallet implements Wallet {
    * @param id The ID of the vault to be used.
    * @returns The vault used for this wallet.
    */
-  async getVault(id: string): Promise<DFIVault> {
+  async getVault(id: string): Promise<Vault> {
     // get vaults and filter active ones
     const dfiVaults = (await this.client.address.listVault(this.getAddress()))
       .filter(this.isActive)
       .filter((vault) => vault.vaultId === id);
     if (dfiVaults.length === 0)
       throw new Error(`No vault with given ID found - ID: ${id}.`);
-    return new DFIVault(dfiVaults[0]);
+    return new Vault(dfiVaults[0]);
   }
 
   /**
    * Returns the current vault.
    * @returns The vault currently stored vault to be used for management.
    */
-  async getCurrentVault(): Promise<DFIVault> {
+  async getCurrentVault(): Promise<Vault> {
     const id = this.storage.getCurrentVault();
     if (!id)
       throw new Error(
@@ -96,7 +108,24 @@ class DFIWallet implements Wallet {
   }
 
   /**
+   * Sends a custom transaction to your address, so that the backend can pick it up.
+   * @param data the data to be included in the custom transaction.
+   */
+  async sendTransaction(data: string): Promise<string> {
+    const transaction = new Transaction({
+      client: this.client,
+      account: await DFIFactory.getAccount(this, "test12344"),
+      network: this.network,
+    });
+
+    return await transaction.send(data);
+  }
+
+  /**
    * Returns {@link LoanVaultActive} if vault is in active state.
+   *
+   * Info: This is an internal type guard to make sure that only active vaults will be displayed to the user.
+   *
    * @param vault the vault to be checked
    * @returns {@link LoanVaultActive} if vault is in active state.
    */
@@ -105,22 +134,23 @@ class DFIWallet implements Wallet {
   ): vault is LoanVaultActive {
     return vault.state === LoanVaultState.ACTIVE;
   }
+
   /**
    * Returns all vaults that have been created in this wallet.
    * @returns All vaults found for this wallet.
    */
-  async getVaults(): Promise<DFIVault[]> {
+  async getVaults(): Promise<Vault[]> {
     // get vaults and filter active ones
     const dfiVaults = (
       await this.client.address.listVault(this.getAddress())
     ).filter(this.isActive);
 
-    let vaults: DFIVault[] = [];
+    let vaults: Vault[] = [];
     for (let vault of dfiVaults) {
-      vaults.push(new DFIVault(vault));
+      vaults.push(new Vault(vault));
     }
     return vaults;
   }
 }
 
-export { DFIWallet };
+export { Wallet };

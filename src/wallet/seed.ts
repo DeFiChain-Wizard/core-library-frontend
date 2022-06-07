@@ -1,16 +1,16 @@
-import { MnemonicStorage } from "../blockchain/mnemonicstorage";
+import { MnemonicStorage } from "../utils/mnemonicstorage";
 import { DFIStorageUtility } from "../utils/storage";
 /**
- * This SeedUtility provides all operations for the seed management. It will implicitely encrypt the seed.
+ * The Seed provides all operations for the seed management. It will implicitely encrypt the seed.
  */
-interface SeedUtility {
-  getSeedAsArray: (passphrase: string) => Promise<string[]>;
-  getSeedAsString: (passphrase: string) => Promise<string>;
-  getSeedEncrypted: () => string;
-  setSeed: (seedPhrase: string[], passphrase: string) => void;
+interface DFISeed {
+  asArray: (passphrase: string) => Promise<string[]>;
+  asString: (passphrase: string) => Promise<string>;
+  asEncrypted: () => string;
+  set: (seedPhrase: string[], passphrase: string) => void;
 }
 
-class DFISeedUtility implements SeedUtility {
+class Seed implements DFISeed {
   private storage = new DFIStorageUtility();
 
   /**
@@ -18,7 +18,7 @@ class DFISeedUtility implements SeedUtility {
    * @param passphrase The passphrase to decrypt the seed.
    * @returns the seed as array.
    */
-  async getSeedAsArray(passphrase: string) {
+  async asArray(passphrase: string) {
     return await MnemonicStorage.decrypt(this.storage.getSeed(), passphrase);
   }
 
@@ -27,7 +27,7 @@ class DFISeedUtility implements SeedUtility {
    * @param passphrase The passphrase to decrypt the seed.
    * @returns the seed as comma-separated string.
    */
-  async getSeedAsString(passphrase: string) {
+  async asString(passphrase: string) {
     return (
       await MnemonicStorage.decrypt(this.storage.getSeed(), passphrase)
     ).join(",");
@@ -37,15 +37,15 @@ class DFISeedUtility implements SeedUtility {
    * Returns the encrypted seed as stored.
    * @returns the encyrpted seed.
    */
-  getSeedEncrypted() {
+  asEncrypted() {
     return this.storage.getSeed();
   }
   /**
-   * Overwrites the seed that has been set before.
+   * Sets the seed, which will be encrypted and stored in local storage.
    * @param seed The seed as array of words.
    * @param passphrase The passphrase to encrypt the seed.
    */
-  async setSeed(seed: string[], passphrase: string) {
+  async set(seed: string[], passphrase: string) {
     // clean up seed first
     const seedCleanedUp = seed.map((words) => words.trim());
     //store now
@@ -55,4 +55,4 @@ class DFISeedUtility implements SeedUtility {
   }
 }
 
-export { DFISeedUtility };
+export { Seed };

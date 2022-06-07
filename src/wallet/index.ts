@@ -1,3 +1,3 @@
-export { DFIWallet } from "./wallet";
-export { DFIVault } from "./vault";
-export { DFISeedUtility } from "./seedutility";
+export { Wallet } from "./wallet";
+export { Vault } from "./vault";
+export { Seed } from "./seed";

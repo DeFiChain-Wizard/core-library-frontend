@@ -5,7 +5,9 @@ import {
   LoanVaultTokenAmount,
 } from "@defichain/whale-api-client/dist/api/loan";
 
-class DFIVault implements LoanVaultActive {
+interface DFIVault extends LoanVaultActive {}
+
+class Vault implements DFIVault {
   vaultId: string;
   loanScheme: LoanScheme;
   ownerAddress: string;
@@ -39,4 +41,4 @@ class DFIVault implements LoanVaultActive {
   }
 }
 
-export { DFIVault };
+export { Vault };
