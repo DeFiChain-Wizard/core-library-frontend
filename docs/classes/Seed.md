@@ -41,7 +41,7 @@ The Seed needs to be initialized with the seed and the passphrase.
 
 #### Defined in
 
-[wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/seed.ts#L27)
+[wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/seed.ts#L27)
 
 ## Methods
 
@@ -73,7 +73,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[wallet/seed.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/seed.ts#L61)
+[wallet/seed.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/seed.ts#L61)
 
 ___
 
@@ -99,7 +99,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[wallet/seed.ts:94](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/seed.ts#L94)
+[wallet/seed.ts:94](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/seed.ts#L94)
 
 ___
 
@@ -131,4 +131,4 @@ DFISeed.asString
 
 #### Defined in
 
-[wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/seed.ts#L81)
+[wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/seed.ts#L81)
