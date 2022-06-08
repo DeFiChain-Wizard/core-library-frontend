@@ -45,7 +45,7 @@ You need provide the DFI address to instantiate a new wallet.
 
 #### Defined in
 
-[wallet/wallet.ts:42](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L42)
+[wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L49)
 
 ## Methods
 
@@ -67,7 +67,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[wallet/wallet.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L73)
+[wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L80)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[wallet/wallet.ts:54](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L54)
+[wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L61)
 
 ___
 
@@ -103,7 +103,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:96](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L96)
+[wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L103)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[wallet/wallet.ts:65](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L65)
+[wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L72)
 
 ___
 
@@ -139,7 +139,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L61)
+[wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L68)
 
 ___
 
@@ -157,7 +157,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L171)
+[wallet/wallet.ts:180](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L180)
 
 ___
 
@@ -185,7 +185,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L82)
+[wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L89)
 
 ___
 
@@ -207,7 +207,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[wallet/wallet.ts:149](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L149)
+[wallet/wallet.ts:158](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L158)
 
 ___
 
@@ -225,23 +225,23 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[wallet/wallet.ts:162](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L162)
+[wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L171)
 
 ___
 
 ### sendTransaction
 
-▸ **sendTransaction**(`data`, `seed`, `passphrase`): `Promise`<`string`\>
+▸ **sendTransaction**(`message`, `seed`, `passphrase`): `Promise`<`string`\>
 
 Sends a custom transaction to your address, so that the backend can pick it up.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `string` | the data to be included in the custom transaction. |
-| `seed` | [`Seed`](Seed.md) | - |
-| `passphrase` | `string` | - |
+| Name | Type |
+| :------ | :------ |
+| `message` | `CustomMessage` |
+| `seed` | [`Seed`](Seed.md) |
+| `passphrase` | `string` |
 
 #### Returns
 
@@ -253,7 +253,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[wallet/wallet.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L117)
+[wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L124)
 
 ___
 
@@ -279,4 +279,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f836b35/src/wallet/wallet.ts#L109)
+[wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/32cc667/src/wallet/wallet.ts#L116)

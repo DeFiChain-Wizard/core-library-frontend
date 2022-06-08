@@ -7,11 +7,14 @@ import {
   LoanVaultLiquidated,
   LoanVaultState,
 } from "@defichain/whale-api-client/dist/api/loan";
-import { Transaction } from "./transaction";
 import { DFIFactory } from "../blockchain/dfifactory";
 import { Seed } from "./seed";
 import { AddressToken } from "@defichain/whale-api-client/dist/api/address";
-
+import {
+  Transaction,
+  CustomMessage,
+  TransactionOptions,
+} from "@defichainwizard/custom-transactions";
 /**
  * Wallet interface.
  */
@@ -24,7 +27,11 @@ interface DFIWallet {
   listTokens: () => Promise<AddressToken[]>;
   getUTXOBalance: () => Promise<Number>;
   setCurrentVault: (id: string) => void;
-  sendTransaction: (data: string, seed: Seed, passphrase: string) => void;
+  sendTransaction: (
+    message: CustomMessage,
+    seed: Seed,
+    passphrase: string
+  ) => void;
 }
 
 /**
@@ -115,17 +122,19 @@ class Wallet implements DFIWallet {
    * @param data the data to be included in the custom transaction.
    */
   async sendTransaction(
-    data: string,
+    message: CustomMessage,
     seed: Seed,
     passphrase: string
   ): Promise<string> {
-    const transaction = new Transaction({
+    const config: TransactionOptions = {
       client: this.client,
       account: await DFIFactory.getAccount(this, seed, passphrase),
       network: this.network,
-    });
+    };
 
-    return await transaction.send(data);
+    const transaction = new Transaction(config);
+
+    return await transaction.send(message);
   }
 
   /**

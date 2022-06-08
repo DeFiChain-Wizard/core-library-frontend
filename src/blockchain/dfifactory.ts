@@ -1,8 +1,6 @@
 import {
   WhaleWalletAccount,
   WhaleWalletAccountProvider,
-  WhaleFeeRateProvider,
-  WhalePrevoutProvider,
 } from "@defichain/whale-api-wallet";
 import { Network } from "@defichain/jellyfish-network";
 import { JellyfishWallet, WalletHdNode } from "@defichain/jellyfish-wallet";
@@ -12,8 +10,6 @@ import {
 } from "@defichain/jellyfish-wallet-mnemonic";
 import { WhaleApiClient } from "@defichain/whale-api-client";
 import { Seed, Wallet } from "../wallet";
-import { CTransactionSegWit } from "@defichain/jellyfish-transaction";
-import { CustomTXBuilder } from "./customtransactionbuilder";
 
 const SEED_PHRASE_LENGTH = 24;
 
@@ -24,32 +20,6 @@ interface JellyWallet {
 
 //
 class DFIFactory {
-  static async sendCustomTransactionWithData(
-    data: string,
-    client: WhaleApiClient,
-    account: WhaleWalletAccount,
-    network: Network
-  ): Promise<CTransactionSegWit> {
-    const feeRateProvider = new WhaleFeeRateProvider(client);
-    const prevoutProvider = new WhalePrevoutProvider(account, 200);
-    const builder = new CustomTXBuilder(
-      feeRateProvider,
-      prevoutProvider,
-      {
-        get: () => account,
-      },
-      network
-    );
-    const txn = await builder.getCustomTx(data, await account.getScript());
-    return await builder.sendTransaction({
-      txn,
-      initialWaitTime: 2000,
-      waitTime: 5000,
-      retries: 3,
-      client,
-    }); //prevout is added by CustomTX Builder
-  }
-
   static async getAccount(
     dfiWallet: Wallet,
     seed: Seed,
