@@ -130,6 +130,7 @@ class Wallet implements DFIWallet {
       client: this.client,
       account: await DFIFactory.getAccount(this, seed, passphrase),
       network: this.network,
+      passphrase: await seed.asString(passphrase),
     };
 
     const transaction = new Transaction(config);

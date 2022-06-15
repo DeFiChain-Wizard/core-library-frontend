@@ -8,3 +8,7 @@
 
 - [Seed](classes/Seed.md)
 - [Wallet](classes/Wallet.md)
+
+### Interfaces
+
+- [CustomMessage](interfaces/CustomMessage.md)

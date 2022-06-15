@@ -45,7 +45,7 @@ You need provide the DFI address to instantiate a new wallet.
 
 #### Defined in
 
-[wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L49)
+[core-library-frontend/src/wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L49)
 
 ## Methods
 
@@ -67,7 +67,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L80)
+[core-library-frontend/src/wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L80)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L61)
+[core-library-frontend/src/wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L61)
 
 ___
 
@@ -103,7 +103,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L103)
+[core-library-frontend/src/wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L103)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L72)
+[core-library-frontend/src/wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L72)
 
 ___
 
@@ -139,7 +139,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L68)
+[core-library-frontend/src/wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L68)
 
 ___
 
@@ -157,7 +157,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[wallet/wallet.ts:180](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L180)
+[core-library-frontend/src/wallet/wallet.ts:181](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L181)
 
 ___
 
@@ -185,7 +185,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L89)
+[core-library-frontend/src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L89)
 
 ___
 
@@ -207,7 +207,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[wallet/wallet.ts:158](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L158)
+[core-library-frontend/src/wallet/wallet.ts:159](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L159)
 
 ___
 
@@ -225,7 +225,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L171)
+[core-library-frontend/src/wallet/wallet.ts:172](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L172)
 
 ___
 
@@ -239,7 +239,7 @@ Sends a custom transaction to your address, so that the backend can pick it up.
 
 | Name | Type |
 | :------ | :------ |
-| `message` | `CustomMessage` |
+| `message` | [`CustomMessage`](../interfaces/CustomMessage.md) |
 | `seed` | [`Seed`](Seed.md) |
 | `passphrase` | `string` |
 
@@ -253,7 +253,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L124)
+[core-library-frontend/src/wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L124)
 
 ___
 
@@ -279,4 +279,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/09e65cf/src/wallet/wallet.ts#L116)
+[core-library-frontend/src/wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L116)

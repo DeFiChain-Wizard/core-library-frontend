@@ -29,7 +29,7 @@
         "@defichain/jellyfish-wallet-mnemonic": "^2.45.10",
         "@defichain/whale-api-client": "^2.45.10",
         "@defichain/whale-api-wallet": "^2.45.10",
-        "@defichainwizard/custom-transactions": "latest",
+        "@defichainwizard/custom-transactions": "^0.0.3",
         "local-storage": "^2.0.0",
         "localstorage-slim": "^2.3.0"
     },
