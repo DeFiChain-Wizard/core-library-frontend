@@ -45,7 +45,7 @@ You need provide the DFI address to instantiate a new wallet.
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L49)
+[src/wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L49)
 
 ## Methods
 
@@ -67,7 +67,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L80)
+[src/wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L80)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L61)
+[src/wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L61)
 
 ___
 
@@ -103,7 +103,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L103)
+[src/wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L103)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L72)
+[src/wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L72)
 
 ___
 
@@ -139,7 +139,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L68)
+[src/wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L68)
 
 ___
 
@@ -157,7 +157,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:181](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L181)
+[src/wallet/wallet.ts:181](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L181)
 
 ___
 
@@ -185,7 +185,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L89)
+[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L89)
 
 ___
 
@@ -207,7 +207,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:159](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L159)
+[src/wallet/wallet.ts:159](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L159)
 
 ___
 
@@ -225,7 +225,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:172](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L172)
+[src/wallet/wallet.ts:172](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L172)
 
 ___
 
@@ -253,7 +253,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L124)
+[src/wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L124)
 
 ___
 
@@ -279,4 +279,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[core-library-frontend/src/wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/2c7103a/src/wallet/wallet.ts#L116)
+[src/wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L116)
