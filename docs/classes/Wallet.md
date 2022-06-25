@@ -45,7 +45,7 @@ The DFI Wallet Address and the network is needed to instantiate the wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:51](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L51)
+[src/wallet/wallet.ts:51](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L51)
 
 ## Methods
 
@@ -67,7 +67,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[src/wallet/wallet.ts:90](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L90)
+[src/wallet/wallet.ts:90](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L90)
 
 ___
 
@@ -85,7 +85,7 @@ The current {@link WhaleApiClient}.
 
 #### Defined in
 
-[src/wallet/wallet.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L66)
+[src/wallet/wallet.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L66)
 
 ___
 
@@ -107,7 +107,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:113](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L113)
+[src/wallet/wallet.ts:113](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L113)
 
 ___
 
@@ -125,7 +125,7 @@ The network used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L82)
+[src/wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L82)
 
 ___
 
@@ -147,7 +147,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[src/wallet/wallet.ts:74](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L74)
+[src/wallet/wallet.ts:74](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L74)
 
 ___
 
@@ -169,7 +169,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[src/wallet/wallet.ts:201](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L201)
+[src/wallet/wallet.ts:201](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L201)
 
 ___
 
@@ -197,7 +197,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L99)
+[src/wallet/wallet.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L99)
 
 ___
 
@@ -219,7 +219,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[src/wallet/wallet.ts:170](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L170)
+[src/wallet/wallet.ts:170](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L170)
 
 ___
 
@@ -241,7 +241,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[src/wallet/wallet.ts:188](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L188)
+[src/wallet/wallet.ts:188](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L188)
 
 ___
 
@@ -271,7 +271,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[src/wallet/wallet.ts:137](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L137)
+[src/wallet/wallet.ts:137](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L137)
 
 ___
 
@@ -297,4 +297,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L126)
+[src/wallet/wallet.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e955c64/src/wallet/wallet.ts#L126)
