@@ -2,7 +2,9 @@
 
 # DeFiChain Wizard Core Library
 
-This library can be used to access and retrieve certain data that should be available from within the UI.
+This library can be used to access and retrieve certain wallet data that should be available from within the UI.
+
+It can also send a custom transaction to the DeFiChain.
 
 # Installation
 

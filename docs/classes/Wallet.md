@@ -34,18 +34,18 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 
 • **new Wallet**(`address`, `network?`)
 
-You need provide the DFI address to instantiate a new wallet.
+The DFI Wallet Address and the network is needed to instantiate the wallet.
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `address` | `string` | `undefined` | The DFI address for the wallet. |
-| `network` | `string` | `"mainnet"` | - |
+| `address` | `string` | `undefined` | the DFI wallet address |
+| `network` | `string` | `"mainnet"` | the network as string (e.g. mainnet, testnet) |
 
 #### Defined in
 
-[src/wallet/wallet.ts:49](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L49)
+[src/wallet/wallet.ts:51](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L51)
 
 ## Methods
 
@@ -67,7 +67,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[src/wallet/wallet.ts:80](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L80)
+[src/wallet/wallet.ts:90](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L90)
 
 ___
 
@@ -75,13 +75,17 @@ ___
 
 ▸ **getClient**(): `WhaleApiClient`
 
+Returns the current {@link WhaleApiClient}.
+
 #### Returns
 
 `WhaleApiClient`
 
+The current {@link WhaleApiClient}.
+
 #### Defined in
 
-[src/wallet/wallet.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L61)
+[src/wallet/wallet.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L66)
 
 ___
 
@@ -103,7 +107,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:103](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L103)
+[src/wallet/wallet.ts:113](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L113)
 
 ___
 
@@ -111,13 +115,17 @@ ___
 
 ▸ **getNetwork**(): `Network`
 
+Returns the {@link Network} used for this wallet ('mainnet', 'testnet',...).
+
 #### Returns
 
 `Network`
 
+The network used for this wallet.
+
 #### Defined in
 
-[src/wallet/wallet.ts:72](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L72)
+[src/wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L82)
 
 ___
 
@@ -125,13 +133,13 @@ ___
 
 ▸ **getNetworkAsString**(): `string`
 
-Returns the network used for this wallet ('mainnet', 'testnet',...)
+Returns the network used for this wallet ('mainnet', 'testnet',...) as string.
 
 #### Returns
 
 `string`
 
-The network used for this wallet.
+The network used for this wallet as string.
 
 #### Implementation of
 
@@ -139,7 +147,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[src/wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L68)
+[src/wallet/wallet.ts:74](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L74)
 
 ___
 
@@ -147,9 +155,13 @@ ___
 
 ▸ **getUTXOBalance**(): `Promise`<`Number`\>
 
+Returns the UTXO Balance of the wallet.
+
 #### Returns
 
 `Promise`<`Number`\>
+
+The UTXO Balance of the wallet.
 
 #### Implementation of
 
@@ -157,7 +169,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[src/wallet/wallet.ts:181](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L181)
+[src/wallet/wallet.ts:201](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L201)
 
 ___
 
@@ -185,7 +197,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L89)
+[src/wallet/wallet.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L99)
 
 ___
 
@@ -207,7 +219,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[src/wallet/wallet.ts:159](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L159)
+[src/wallet/wallet.ts:170](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L170)
 
 ___
 
@@ -215,9 +227,13 @@ ___
 
 ▸ **listTokens**(): `Promise`<`AddressToken`[]\>
 
+Returns a list of tokens stored in the wallet.
+
 #### Returns
 
 `Promise`<`AddressToken`[]\>
+
+An array of tokens that are stored in the wallet.
 
 #### Implementation of
 
@@ -225,7 +241,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[src/wallet/wallet.ts:172](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L172)
+[src/wallet/wallet.ts:188](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L188)
 
 ___
 
@@ -237,15 +253,17 @@ Sends a custom transaction to your address, so that the backend can pick it up.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | [`CustomMessage`](../interfaces/CustomMessage.md) |
-| `seed` | [`Seed`](Seed.md) |
-| `passphrase` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | [`CustomMessage`](../interfaces/CustomMessage.md) | The [CustomMessage](../interfaces/CustomMessage.md) to send |
+| `seed` | [`Seed`](Seed.md) | The seed object. |
+| `passphrase` | `string` | The passphrase to decrypt the seed. |
 
 #### Returns
 
 `Promise`<`string`\>
+
+the transcation id.
 
 #### Implementation of
 
@@ -253,7 +271,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[src/wallet/wallet.ts:124](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L124)
+[src/wallet/wallet.ts:137](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L137)
 
 ___
 
@@ -279,4 +297,4 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:116](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/wallet.ts#L116)
+[src/wallet/wallet.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/wallet.ts#L126)

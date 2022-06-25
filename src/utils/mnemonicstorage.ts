@@ -9,7 +9,7 @@ import {
 import { isStringNullOrEmpty } from "./helpers";
 
 /**
- * Raw mnemonic words encryption implementation reside in light wallet
+ * Raw mnemonic words encryption implementation resides in light wallet.
  */
 class EncryptedMnemonicStorage {
   /**
@@ -25,7 +25,7 @@ class EncryptedMnemonicStorage {
   }
 
   /**
-   * Encrypt mnemonic words, and store into persistent storage.
+   * Encrypts mnemonic words.
    *
    * @param {string[]} words
    * @param {string} passphrase

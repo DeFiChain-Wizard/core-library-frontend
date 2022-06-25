@@ -13,10 +13,11 @@ import { AddressToken } from "@defichain/whale-api-client/dist/api/address";
 import {
   Transaction,
   CustomMessage,
-  TransactionOptions,
+  TransactionConfig,
 } from "@defichainwizard/custom-transactions";
+
 /**
- * Wallet interface.
+ * The DFI Wallet interface.
  */
 interface DFIWallet {
   getAddress: () => string;
@@ -42,9 +43,10 @@ class Wallet implements DFIWallet {
   private readonly client: WhaleApiClient;
   private readonly network: Network;
   /**
-   * You need provide the DFI address to instantiate a new wallet.
+   * The DFI Wallet Address and the network is needed to instantiate the wallet.
    *
-   * @param address The DFI address for the wallet.
+   * @param address the DFI wallet address
+   * @param network the network as string (e.g. mainnet, testnet)
    */
   constructor(address: string, network = "mainnet") {
     this.storage.storeAddress(address);
@@ -55,20 +57,28 @@ class Wallet implements DFIWallet {
       version: OCEAN_VERSION,
       network: this.network.name,
     });
-    // store all vaults in localstorage as well
   }
 
+  /**
+   * Returns the current {@link WhaleApiClient}.
+   * @returns The current {@link WhaleApiClient}.
+   */
   getClient(): WhaleApiClient {
     return this.client;
   }
+
   /**
-   * Returns the network used for this wallet ('mainnet', 'testnet',...)
-   * @returns The network used for this wallet.
+   * Returns the network used for this wallet ('mainnet', 'testnet',...) as string.
+   * @returns The network used for this wallet as string.
    */
   getNetworkAsString(): string {
     return this.storage.getNetwork();
   }
 
+  /**
+   * Returns the {@link Network} used for this wallet ('mainnet', 'testnet',...).
+   * @returns The network used for this wallet.
+   */
   getNetwork(): Network {
     return this.network;
   }
@@ -119,23 +129,24 @@ class Wallet implements DFIWallet {
 
   /**
    * Sends a custom transaction to your address, so that the backend can pick it up.
-   * @param data the data to be included in the custom transaction.
+   * @param message The {@link CustomMessage} to send
+   * @param seed The seed object.
+   * @param passphrase The passphrase to decrypt the seed.
+   * @returns the transcation id.
    */
   async sendTransaction(
     message: CustomMessage,
     seed: Seed,
     passphrase: string
   ): Promise<string> {
-    const config: TransactionOptions = {
+    const config: TransactionConfig = {
       client: this.client,
       account: await DFIFactory.getAccount(this, seed, passphrase),
       network: this.network,
-      passphrase: await seed.asString(passphrase),
+      passphrase: await seed.asArray(passphrase),
     };
 
-    const transaction = new Transaction(config);
-
-    return await transaction.send(message);
+    return await new Transaction(config).send(message);
   }
 
   /**
@@ -169,6 +180,11 @@ class Wallet implements DFIWallet {
     return vaults;
   }
 
+  /**
+   * Returns a list of tokens stored in the wallet.
+   *
+   * @returns An array of tokens that are stored in the wallet.
+   */
   async listTokens(): Promise<AddressToken[]> {
     const tokens = await this.client.address.listToken(this.getAddress(), 200);
     const returnTokens: AddressToken[] = [];
@@ -178,6 +194,10 @@ class Wallet implements DFIWallet {
     return returnTokens;
   }
 
+  /**
+   * Returns the UTXO Balance of the wallet.
+   * @returns The UTXO Balance of the wallet.
+   */
   async getUTXOBalance(): Promise<Number> {
     const balance = await this.client.address.getBalance(this.getAddress());
     return Number(balance);

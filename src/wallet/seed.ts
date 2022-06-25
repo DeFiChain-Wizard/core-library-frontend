@@ -11,7 +11,7 @@ interface DFISeed {
 /**
  * The Seed provides all operations for the seed management. It will implicitely encrypt and store the seed.
  *
- * This API only support addresses from the light wallet, which means that you will have to provide the 24 words.
+ * This API only support addresses from the light wallet, which means that you will have to provide the 24 words as an array.
  */
 class Seed implements DFISeed {
   private storage = new DFIStorageUtility();
@@ -19,7 +19,7 @@ class Seed implements DFISeed {
   /**
    * The Seed needs to be initialized with the seed and the passphrase.
    *
-   * @param seed The seed to be stored.
+   * @param seed The seed to be stored - provided as string array of 24 words.
    * @param passphrase The passphrase to encrypt the seed in the storage location.
    *
    * @throws Error when the provided seed is not valid (array must have at least 24 words)
@@ -33,6 +33,11 @@ class Seed implements DFISeed {
     const seedCleanedUp = seed.map((words) => words.trim());
 
     /**
+     *
+     * Encrypts the seed with a given passphrase!
+     *
+     * BEWARE:
+     *
      * This is not so cool. Encryption takes some time...
      *
      * So if someone accesses one of the getters right after the instantiation, it will crash.

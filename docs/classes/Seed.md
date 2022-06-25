@@ -4,7 +4,7 @@
 
 The Seed provides all operations for the seed management. It will implicitely encrypt and store the seed.
 
-This API only support addresses from the light wallet, which means that you will have to provide the 24 words.
+This API only support addresses from the light wallet, which means that you will have to provide the 24 words as an array.
 
 ## Implements
 
@@ -36,12 +36,12 @@ The Seed needs to be initialized with the seed and the passphrase.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `seed` | `string`[] | The seed to be stored. |
+| `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
 | `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
 
 #### Defined in
 
-[src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/seed.ts#L27)
+[src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/seed.ts#L27)
 
 ## Methods
 
@@ -73,7 +73,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[src/wallet/seed.ts:61](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/seed.ts#L61)
+[src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/seed.ts#L66)
 
 ___
 
@@ -99,7 +99,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[src/wallet/seed.ts:94](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/seed.ts#L94)
+[src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/seed.ts#L99)
 
 ___
 
@@ -131,4 +131,4 @@ DFISeed.asString
 
 #### Defined in
 
-[src/wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/12a7245/src/wallet/seed.ts#L81)
+[src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/cb78abc/src/wallet/seed.ts#L86)
