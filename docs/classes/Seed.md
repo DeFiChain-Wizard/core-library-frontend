@@ -30,7 +30,9 @@ This API only support addresses from the light wallet, which means that you will
 
 The Seed needs to be initialized with the seed and the passphrase.
 
-**`throws`** Error when the provided seed is not valid (array must have at least 24 words)
+**`Throws`**
+
+Error when the provided seed is not valid (array must have at least 24 words)
 
 #### Parameters
 
@@ -38,10 +40,6 @@ The Seed needs to be initialized with the seed and the passphrase.
 | :------ | :------ | :------ |
 | `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
 | `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
-
-#### Defined in
-
-[src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/seed.ts#L27)
 
 ## Methods
 
@@ -71,10 +69,6 @@ the seed as array.
 
 DFISeed.asArray
 
-#### Defined in
-
-[src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/seed.ts#L66)
-
 ___
 
 ### asEncrypted
@@ -96,10 +90,6 @@ the encyrpted seed.
 #### Implementation of
 
 DFISeed.asEncrypted
-
-#### Defined in
-
-[src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/seed.ts#L99)
 
 ___
 
@@ -128,7 +118,3 @@ the seed as comma-separated string.
 #### Implementation of
 
 DFISeed.asString
-
-#### Defined in
-
-[src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/seed.ts#L86)

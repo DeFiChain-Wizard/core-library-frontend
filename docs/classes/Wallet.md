@@ -43,10 +43,6 @@ The DFI Wallet Address and the network is needed to instantiate the wallet.
 | `address` | `string` | `undefined` | the DFI wallet address |
 | `network` | `string` | `"mainnet"` | the network as string (e.g. mainnet, testnet) |
 
-#### Defined in
-
-[src/wallet/wallet.ts:51](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L51)
-
 ## Methods
 
 ### getAddress
@@ -65,27 +61,19 @@ The address used for this wallet.
 
 DFIWallet.getAddress
 
-#### Defined in
-
-[src/wallet/wallet.ts:90](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L90)
-
 ___
 
 ### getClient
 
 ▸ **getClient**(): `WhaleApiClient`
 
-Returns the current {@link WhaleApiClient}.
+Returns the current WhaleApiClient.
 
 #### Returns
 
 `WhaleApiClient`
 
-The current {@link WhaleApiClient}.
-
-#### Defined in
-
-[src/wallet/wallet.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L66)
+The current WhaleApiClient.
 
 ___
 
@@ -105,27 +93,19 @@ The vault currently stored vault to be used for management.
 
 DFIWallet.getCurrentVault
 
-#### Defined in
-
-[src/wallet/wallet.ts:113](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L113)
-
 ___
 
 ### getNetwork
 
 ▸ **getNetwork**(): `Network`
 
-Returns the {@link Network} used for this wallet ('mainnet', 'testnet',...).
+Returns the Network used for this wallet ('mainnet', 'testnet',...).
 
 #### Returns
 
 `Network`
 
 The network used for this wallet.
-
-#### Defined in
-
-[src/wallet/wallet.ts:82](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L82)
 
 ___
 
@@ -145,10 +125,6 @@ The network used for this wallet as string.
 
 DFIWallet.getNetworkAsString
 
-#### Defined in
-
-[src/wallet/wallet.ts:74](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L74)
-
 ___
 
 ### getUTXOBalance
@@ -166,10 +142,6 @@ The UTXO Balance of the wallet.
 #### Implementation of
 
 DFIWallet.getUTXOBalance
-
-#### Defined in
-
-[src/wallet/wallet.ts:201](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L201)
 
 ___
 
@@ -195,10 +167,6 @@ The vault used for this wallet.
 
 DFIWallet.getVault
 
-#### Defined in
-
-[src/wallet/wallet.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L99)
-
 ___
 
 ### getVaults
@@ -217,10 +185,6 @@ All vaults found for this wallet.
 
 DFIWallet.getVaults
 
-#### Defined in
-
-[src/wallet/wallet.ts:170](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L170)
-
 ___
 
 ### listTokens
@@ -238,10 +202,6 @@ An array of tokens that are stored in the wallet.
 #### Implementation of
 
 DFIWallet.listTokens
-
-#### Defined in
-
-[src/wallet/wallet.ts:188](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L188)
 
 ___
 
@@ -269,10 +229,6 @@ the transcation id.
 
 DFIWallet.sendTransaction
 
-#### Defined in
-
-[src/wallet/wallet.ts:137](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L137)
-
 ___
 
 ### setCurrentVault
@@ -294,7 +250,3 @@ Stores the current vault to be managed by the wizard.
 #### Implementation of
 
 DFIWallet.setCurrentVault
-
-#### Defined in
-
-[src/wallet/wallet.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e221cd6/src/wallet/wallet.ts#L126)
