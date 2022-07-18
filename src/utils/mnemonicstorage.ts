@@ -48,8 +48,14 @@ class EncryptedMnemonicStorage {
       throw new Error("Seed to decrypt is not valid!");
     }
 
-    const buffer = await this.encryption.decrypt(encrypted, passphrase);
-    return entropyAsMnemonic(buffer);
+    try {
+      const buffer = await this.encryption.decrypt(encrypted, passphrase);
+      return entropyAsMnemonic(buffer);
+    } catch (e) {
+      throw new Error(
+        "Seed does not seem to be valid. Please check your 24 words."
+      );
+    }
   }
 }
 
