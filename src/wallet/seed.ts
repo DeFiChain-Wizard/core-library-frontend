@@ -5,7 +5,7 @@ import { DFIStorageUtility } from "../utils/storage";
 interface DFISeed {
   asArray: (passphrase: string) => Promise<string[]>;
   asString: (passphrase: string) => Promise<string>;
-  asEncrypted: () => string;
+  asEncrypted: () => Promise<string>;
 }
 
 /**
@@ -66,7 +66,7 @@ class Seed implements DFISeed {
   async asArray(passphrase: string) {
     let seed: string[];
     try {
-      seed = await MnemonicStorage.decrypt(this.asEncrypted(), passphrase);
+      seed = await MnemonicStorage.decrypt(await this.asEncrypted(), passphrase);
     } catch (e) {
       throw Error("Seed could not be decrypted. Please check passphrase.");
     }
@@ -96,8 +96,8 @@ class Seed implements DFISeed {
    *
    * @returns the encyrpted seed.
    */
-  asEncrypted() {
-    return this.storage.getSeed();
+  async asEncrypted() {
+    return await this.storage.getSeed();
   }
 }
 

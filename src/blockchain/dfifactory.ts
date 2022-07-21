@@ -43,7 +43,7 @@ class DFIFactory {
     for (let i = 0; i < accounts.length; i++) {
       const account = accounts[i];
       const address = await account.getAddress();
-      if (address === dfiWallet.getAddress()) {
+      if (address === await dfiWallet.getAddress()) {
         wallet.account = account;
         break;
       }
