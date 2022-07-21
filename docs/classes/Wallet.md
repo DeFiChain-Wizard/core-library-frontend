@@ -47,13 +47,13 @@ The DFI Wallet Address and the network is needed to instantiate the wallet.
 
 ### getAddress
 
-▸ **getAddress**(): `string`
+▸ **getAddress**(): `Promise`<`string`\>
 
 Returns the address used for this wallet. Usually starts with 'df1...'.
 
 #### Returns
 
-`string`
+`Promise`<`string`\>
 
 The address used for this wallet.
 
@@ -111,13 +111,13 @@ ___
 
 ### getNetworkAsString
 
-▸ **getNetworkAsString**(): `string`
+▸ **getNetworkAsString**(): `Promise`<`string`\>
 
 Returns the network used for this wallet ('mainnet', 'testnet',...) as string.
 
 #### Returns
 
-`string`
+`Promise`<`string`\>
 
 The network used for this wallet as string.
 
