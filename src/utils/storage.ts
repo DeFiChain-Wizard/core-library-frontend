@@ -1,9 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SEED_KEY = "seed",
-  ADDRESS_KEY = "address",
-  NETWORK_KEY = "network",
-  VAULT_KEY = "vault";
+const
+  SEED_KEY = "@seed",
+  ADDRESS_KEY = "@address",
+  NETWORK_KEY = "@network",
+  VAULT_KEY = "@vault";
 
 interface StorageUtility {
   getAddress: () => Promise<string>;
@@ -25,7 +26,7 @@ class DFIStorageUtility implements StorageUtility {
    * @returns the DFI wallet address from local storage.
    */
   async getAddress() {
-    return await AsyncStorage.getItem(`@${ADDRESS_KEY}`) ?? ""
+    return await AsyncStorage.getItem(ADDRESS_KEY) ?? ""
   }
 
   /**
@@ -33,7 +34,7 @@ class DFIStorageUtility implements StorageUtility {
    * @param address The DFI wallet address to store.
    */
   async storeAddress(address: string) {
-    await AsyncStorage.setItem(`@${ADDRESS_KEY}`, address)
+    await AsyncStorage.setItem(ADDRESS_KEY, address)
   }
 
   /**
@@ -41,7 +42,7 @@ class DFIStorageUtility implements StorageUtility {
    * @returns the network from local storage.
    */
   async getNetwork() {
-    return await AsyncStorage.getItem(`@${NETWORK_KEY}`) ?? ""
+    return await AsyncStorage.getItem(NETWORK_KEY) ?? ""
   }
 
   /**
@@ -49,14 +50,14 @@ class DFIStorageUtility implements StorageUtility {
    * @param network The network to store.
    */
   async storeNetwork(network: string) {
-    await AsyncStorage.setItem(`@${NETWORK_KEY}`, network)
+    await AsyncStorage.setItem(NETWORK_KEY, network)
   }
   /**
    * Returns the encrypted seed from the local storage.
    * @returns the encrypted seed from local storage.
    */
   async getSeed() {
-    return await AsyncStorage.getItem(`@${SEED_KEY}`) ?? ""
+    return await AsyncStorage.getItem(SEED_KEY) ?? ""
   }
 
   /**
@@ -64,7 +65,7 @@ class DFIStorageUtility implements StorageUtility {
    * @param seed The encrypted seed to store.
    */
   async storeSeed(seed: string) {
-    await AsyncStorage.setItem(`@${SEED_KEY}`, seed)
+    await AsyncStorage.setItem(SEED_KEY, seed)
   }
 
   /**
@@ -72,7 +73,7 @@ class DFIStorageUtility implements StorageUtility {
    * @returns the current vault id from local storage.
    */
   async getCurrentVault() {
-    return await AsyncStorage.getItem(`@${VAULT_KEY}`) ?? ""
+    return await AsyncStorage.getItem(VAULT_KEY) ?? ""
   }
 
   /**
@@ -80,7 +81,7 @@ class DFIStorageUtility implements StorageUtility {
    * @param vault The  current vault id to store.
    */
   async storeCurrentVault(vault: string) {
-    await AsyncStorage.setItem(`@${VAULT_KEY}`, vault)
+    await AsyncStorage.setItem(VAULT_KEY, vault)
   }
 }
 
