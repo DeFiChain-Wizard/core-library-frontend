@@ -16,6 +16,7 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 
 ### Methods
 
+- [findLastTransactions](Wallet.md#findlasttransactions)
 - [getAddress](Wallet.md#getaddress)
 - [getClient](Wallet.md#getclient)
 - [getCurrentVault](Wallet.md#getcurrentvault)
@@ -43,7 +44,27 @@ The DFI Wallet Address and the network is needed to instantiate the wallet.
 | `address` | `string` | `undefined` | the DFI wallet address |
 | `network` | `string` | `"mainnet"` | the network as string (e.g. mainnet, testnet) |
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:53](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L53)
+
 ## Methods
+
+### findLastTransactions
+
+▸ **findLastTransactions**(): `Promise`<`undefined` \| `TransactionMessage`\>
+
+Finds the last transactions on the blockchain.
+
+#### Returns
+
+`Promise`<`undefined` \| `TransactionMessage`\>
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:157](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L157)
+
+___
 
 ### getAddress
 
@@ -61,6 +82,10 @@ The address used for this wallet.
 
 DFIWallet.getAddress
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:92](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L92)
+
 ___
 
 ### getClient
@@ -74,6 +99,10 @@ Returns the current WhaleApiClient.
 `WhaleApiClient`
 
 The current WhaleApiClient.
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:68](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L68)
 
 ___
 
@@ -93,6 +122,10 @@ The vault currently stored vault to be used for management.
 
 DFIWallet.getCurrentVault
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:115](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L115)
+
 ___
 
 ### getNetwork
@@ -106,6 +139,10 @@ Returns the Network used for this wallet ('mainnet', 'testnet',...).
 `Network`
 
 The network used for this wallet.
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:84](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L84)
 
 ___
 
@@ -125,6 +162,10 @@ The network used for this wallet as string.
 
 DFIWallet.getNetworkAsString
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:76](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L76)
+
 ___
 
 ### getUTXOBalance
@@ -142,6 +183,10 @@ The UTXO Balance of the wallet.
 #### Implementation of
 
 DFIWallet.getUTXOBalance
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:215](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L215)
 
 ___
 
@@ -167,6 +212,10 @@ The vault used for this wallet.
 
 DFIWallet.getVault
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:101](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L101)
+
 ___
 
 ### getVaults
@@ -185,6 +234,10 @@ All vaults found for this wallet.
 
 DFIWallet.getVaults
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:184](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L184)
+
 ___
 
 ### listTokens
@@ -202,6 +255,10 @@ An array of tokens that are stored in the wallet.
 #### Implementation of
 
 DFIWallet.listTokens
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:202](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L202)
 
 ___
 
@@ -229,6 +286,10 @@ the transcation id.
 
 DFIWallet.sendTransaction
 
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:139](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L139)
+
 ___
 
 ### setCurrentVault
@@ -250,3 +311,7 @@ Stores the current vault to be managed by the wizard.
 #### Implementation of
 
 DFIWallet.setCurrentVault
+
+#### Defined in
+
+[core-library-frontend/src/wallet/wallet.ts:128](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/wallet.ts#L128)
