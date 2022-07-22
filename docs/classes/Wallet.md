@@ -10,10 +10,6 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 
 ## Table of contents
 
-### Constructors
-
-- [constructor](Wallet.md#constructor)
-
 ### Methods
 
 - [getAddress](Wallet.md#getaddress)
@@ -27,21 +23,7 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 - [listTokens](Wallet.md#listtokens)
 - [sendTransaction](Wallet.md#sendtransaction)
 - [setCurrentVault](Wallet.md#setcurrentvault)
-
-## Constructors
-
-### constructor
-
-• **new Wallet**(`address`, `network?`)
-
-The DFI Wallet Address and the network is needed to instantiate the wallet.
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `address` | `string` | `undefined` | the DFI wallet address |
-| `network` | `string` | `"mainnet"` | the network as string (e.g. mainnet, testnet) |
+- [build](Wallet.md#build)
 
 ## Methods
 
@@ -250,3 +232,20 @@ Stores the current vault to be managed by the wizard.
 #### Implementation of
 
 DFIWallet.setCurrentVault
+
+___
+
+### build
+
+▸ `Static` **build**(`address`, `network?`): `Promise`<[`Wallet`](Wallet.md)\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `address` | `string` | `undefined` |
+| `network` | `string` | `"mainnet"` |
+
+#### Returns
+
+`Promise`<[`Wallet`](Wallet.md)\>

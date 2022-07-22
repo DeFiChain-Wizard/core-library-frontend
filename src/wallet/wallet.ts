@@ -48,15 +48,20 @@ class Wallet implements DFIWallet {
    * @param address the DFI wallet address
    * @param network the network as string (e.g. mainnet, testnet)
    */
-  constructor(address: string, network = "mainnet") {
-    this.storage.storeAddress(address);
-    this.storage.storeNetwork(network);
+  private constructor(network = "mainnet") {
     this.network = network.toLowerCase() === "mainnet" ? MainNet : TestNet;
     this.client = new WhaleApiClient({
       url: OCEAN_URL,
       version: OCEAN_VERSION,
       network: this.network.name,
     });
+  }
+
+  public static async build(address: string, network = "mainnet") {
+    const wallet = new Wallet(network)
+    await wallet.storage.storeAddress(address);
+    await wallet.storage.storeNetwork(network);
+    return wallet
   }
 
   /**
