@@ -12,38 +12,12 @@ This API only support addresses from the light wallet, which means that you will
 
 ## Table of contents
 
-### Constructors
-
-- [constructor](Seed.md#constructor)
-
 ### Methods
 
 - [asArray](Seed.md#asarray)
 - [asEncrypted](Seed.md#asencrypted)
 - [asString](Seed.md#asstring)
-
-## Constructors
-
-### constructor
-
-• **new Seed**(`seed`, `passphrase`)
-
-The Seed needs to be initialized with the seed and the passphrase.
-
-**`Throws`**
-
-Error when the provided seed is not valid (array must have at least 24 words)
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
-| `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
-
-#### Defined in
-
-[core-library-frontend/src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L27)
+- [build](Seed.md#build)
 
 ## Methods
 
@@ -75,7 +49,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L66)
+[src/wallet/seed.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/4da6672/src/wallet/seed.ts#L73)
 
 ___
 
@@ -101,7 +75,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L99)
+[src/wallet/seed.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/4da6672/src/wallet/seed.ts#L109)
 
 ___
 
@@ -133,4 +107,34 @@ DFISeed.asString
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L86)
+[src/wallet/seed.ts:96](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/4da6672/src/wallet/seed.ts#L96)
+
+___
+
+### build
+
+▸ `Static` **build**(`seed`, `passphrase`): `Promise`<[`Seed`](Seed.md)\>
+
+The Seed needs to be initialized with the seed and the passphrase.
+We are using the Builder pattern to allow async initialization
+
+**`Throws`**
+
+Error when the provided seed is not valid (array must have at least 24 words)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
+| `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
+
+#### Returns
+
+`Promise`<[`Seed`](Seed.md)\>
+
+The Seed object
+
+#### Defined in
+
+[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/4da6672/src/wallet/seed.ts#L32)
