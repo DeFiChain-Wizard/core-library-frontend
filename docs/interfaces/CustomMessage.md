@@ -21,7 +21,7 @@
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:14
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:14
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:13
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:13
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:15
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:15
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:18
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:18
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:12
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:12
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-custom-transcation-library/dist/transactions/message.d.ts:11
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:11

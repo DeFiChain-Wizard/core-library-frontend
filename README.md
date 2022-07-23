@@ -76,11 +76,7 @@ The seed is **only** needed when you want to send a transaction. It will be encr
 This API only support addresses from the light wallet, which means that you will have to provide the 24 words.
 
 ```ts
-const mySeed = new Seed(mySeed, myPassword);
-
-/**
- * do some other stuff and don't call any getter of the seed right after the instantiation as the encryption takes 1-3 seconds (depending on the device).
- */
+const mySeed = await Seed.build(mySeed, myPassword);
 
 // now we need the seed for some reason:
 

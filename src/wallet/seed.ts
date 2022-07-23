@@ -17,40 +17,47 @@ class Seed implements DFISeed {
   private storage = new DFIStorageUtility();
 
   /**
+   * Private Constructor used by the static build method. All initialization is done in build
+   */
+  private constructor() {}
+  /**
    * The Seed needs to be initialized with the seed and the passphrase.
+   * We are using the Builder pattern to allow async initialization
    *
    * @param seed The seed to be stored - provided as string array of 24 words.
    * @param passphrase The passphrase to encrypt the seed in the storage location.
-   *
+   * @returns The Seed object
    * @throws Error when the provided seed is not valid (array must have at least 24 words)
    */
-  constructor(seed: string[], passphrase: string) {
+  public static async build(
+    seed: string[],
+    passphrase: string
+  ): Promise<Seed> {
     if (!isSeedValid(seed)) {
       throw Error("Cannot create seed. Please check provided seed.");
     }
 
     // if seed words contain spaces, we'll have to trim the before.
     const seedCleanedUp = seed.map((words) => words.trim());
-
     /**
      *
      * Encrypts the seed with a given passphrase!
      *
-     * BEWARE:
-     *
-     * This is not so cool. Encryption takes some time...
-     *
-     * So if someone accesses one of the getters right after the instantiation, it will crash.
-     *
-     * - Constructor can't be async.
-     * - I don't want to create an empty constructor + an extra set() method (had that before)
-     * - Maybe I can built in a check into the getters and then wait for a sec to try again... still not beautiful.
-     * */
-    MnemonicStorage.encrypt(seedCleanedUp, passphrase)
-      .then((value) => this.storage.storeSeed(value))
-      .catch((e) => {
-        throw Error(e);
-      });
+     */
+    const encryptedSeed = await MnemonicStorage.encrypt(
+      seedCleanedUp,
+      passphrase
+    );
+    const seedObj = new Seed();
+    await seedObj.initSeed(encryptedSeed);
+    return seedObj;
+  }
+  /**
+   * init a new Seed Object, this method is used by the builder Pattern
+   * @param encryptedSeed The already encrypted Seed
+   * */
+  private async initSeed(encryptedSeed: string): Promise<void> {
+    await this.storage.storeSeed(encryptedSeed);
   }
 
   /**
@@ -66,7 +73,10 @@ class Seed implements DFISeed {
   async asArray(passphrase: string) {
     let seed: string[];
     try {
-      seed = await MnemonicStorage.decrypt(await this.asEncrypted(), passphrase);
+      seed = await MnemonicStorage.decrypt(
+        await this.asEncrypted(),
+        passphrase
+      );
     } catch (e) {
       throw Error("Seed could not be decrypted. Please check passphrase.");
     }
