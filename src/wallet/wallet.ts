@@ -22,8 +22,8 @@ import {
  * The DFI Wallet interface.
  */
 interface DFIWallet {
-  getAddress: () => string;
-  getNetworkAsString: () => string;
+  getAddress: () => Promise<string>;
+  getNetworkAsString: () => Promise<string>;
   getVaults: () => Promise<LoanVaultActive[]>;
   getVault: (id: string) => Promise<LoanVaultActive>;
   getCurrentVault: () => Promise<LoanVaultActive>;
@@ -50,15 +50,20 @@ class Wallet implements DFIWallet {
    * @param address the DFI wallet address
    * @param network the network as string (e.g. mainnet, testnet)
    */
-  constructor(address: string, network = "mainnet") {
-    this.storage.storeAddress(address);
-    this.storage.storeNetwork(network);
+  private constructor(network = "mainnet") {
     this.network = network.toLowerCase() === "mainnet" ? MainNet : TestNet;
     this.client = new WhaleApiClient({
       url: OCEAN_URL,
       version: OCEAN_VERSION,
       network: this.network.name,
     });
+  }
+
+  public static async build(address: string, network = "mainnet") {
+    const wallet = new Wallet(network)
+    await wallet.storage.storeAddress(address);
+    await wallet.storage.storeNetwork(network);
+    return wallet
   }
 
   /**
@@ -73,7 +78,7 @@ class Wallet implements DFIWallet {
    * Returns the network used for this wallet ('mainnet', 'testnet',...) as string.
    * @returns The network used for this wallet as string.
    */
-  getNetworkAsString(): string {
+  getNetworkAsString(): Promise<string> {
     return this.storage.getNetwork();
   }
 
@@ -89,7 +94,7 @@ class Wallet implements DFIWallet {
    * Returns the address used for this wallet. Usually starts with 'df1...'.
    * @returns The address used for this wallet.
    */
-  getAddress(): string {
+  getAddress(): Promise<string> {
     return this.storage.getAddress();
   }
 
@@ -100,7 +105,7 @@ class Wallet implements DFIWallet {
    */
   async getVault(id: string): Promise<LoanVaultActive> {
     // get vaults and filter active ones
-    const dfiVaults = (await this.client.address.listVault(this.getAddress()))
+    const dfiVaults = (await this.client.address.listVault(await this.getAddress()))
       .filter(this.isActive)
       .filter((vault) => vault.vaultId === id);
     if (dfiVaults.length === 0)
@@ -113,7 +118,7 @@ class Wallet implements DFIWallet {
    * @returns The vault currently stored vault to be used for management.
    */
   async getCurrentVault(): Promise<LoanVaultActive> {
-    const id = this.storage.getCurrentVault();
+    const id = await this.storage.getCurrentVault();
     if (!id)
       throw new Error(
         "You tried to get the current vault, but no stored vault was found!"
@@ -184,7 +189,7 @@ class Wallet implements DFIWallet {
   async getVaults(): Promise<LoanVaultActive[]> {
     // get vaults and filter active ones
     const dfiVaults = (
-      await this.client.address.listVault(this.getAddress())
+      await this.client.address.listVault(await this.getAddress())
     ).filter(this.isActive);
 
     let vaults: LoanVaultActive[] = [];
@@ -200,7 +205,7 @@ class Wallet implements DFIWallet {
    * @returns An array of tokens that are stored in the wallet.
    */
   async listTokens(): Promise<AddressToken[]> {
-    const tokens = await this.client.address.listToken(this.getAddress(), 200);
+    const tokens = await this.client.address.listToken(await this.getAddress(), 200);
     const returnTokens: AddressToken[] = [];
     tokens.map((token) => {
       returnTokens.push(token);
@@ -213,7 +218,7 @@ class Wallet implements DFIWallet {
    * @returns The UTXO Balance of the wallet.
    */
   async getUTXOBalance(): Promise<Number> {
-    const balance = await this.client.address.getBalance(this.getAddress());
+    const balance = await this.client.address.getBalance(await this.getAddress());
     return Number(balance);
   }
 }

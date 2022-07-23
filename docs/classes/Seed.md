@@ -81,7 +81,7 @@ ___
 
 ### asEncrypted
 
-▸ **asEncrypted**(): `string`
+▸ **asEncrypted**(): `Promise`<`string`\>
 
 Returns the encrypted seed.
 
@@ -91,7 +91,7 @@ It will crash - storing the encrypted seed during the instantiation might take 1
 
 #### Returns
 
-`string`
+`Promise`<`string`\>
 
 the encyrpted seed.
 
