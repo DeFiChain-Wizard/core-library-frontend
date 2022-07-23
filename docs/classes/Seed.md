@@ -41,6 +41,10 @@ Error when the provided seed is not valid (array must have at least 24 words)
 | `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
 | `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
 
+#### Defined in
+
+[core-library-frontend/src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/seed.ts#L27)
+
 ## Methods
 
 ### asArray
@@ -69,6 +73,10 @@ the seed as array.
 
 DFISeed.asArray
 
+#### Defined in
+
+[core-library-frontend/src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/seed.ts#L66)
+
 ___
 
 ### asEncrypted
@@ -90,6 +98,10 @@ the encyrpted seed.
 #### Implementation of
 
 DFISeed.asEncrypted
+
+#### Defined in
+
+[core-library-frontend/src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/seed.ts#L99)
 
 ___
 
@@ -118,3 +130,7 @@ the seed as comma-separated string.
 #### Implementation of
 
 DFISeed.asString
+
+#### Defined in
+
+[core-library-frontend/src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1becf0e/src/wallet/seed.ts#L86)

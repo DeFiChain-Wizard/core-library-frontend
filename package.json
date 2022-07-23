@@ -25,16 +25,16 @@
     },
     "homepage": "https://github.com/DeFiChain-Wizard/core-library-frontend#readme",
     "dependencies": {
-        "@defichain/jellyfish-wallet-encrypted": "^2.51.0",
-        "@defichain/jellyfish-wallet-mnemonic": "^2.51.0",
-        "@defichain/whale-api-client": "^2.51.0",
-        "@defichain/whale-api-wallet": "^2.51.0",
+        "@defichain/jellyfish-wallet-encrypted": "2.54.1",
+        "@defichain/jellyfish-wallet-mnemonic": "2.54.1",
+        "@defichain/whale-api-client": "2.54.1",
+        "@defichain/whale-api-wallet": "2.54.1",
         "@defichainwizard/custom-transactions": "latest",
         "@react-native-async-storage/async-storage": "^1.17.7",
         "localstorage-slim": "^2.3.0"
     },
     "devDependencies": {
-        "typedoc": "^0.23.7",
-        "typedoc-plugin-markdown": "^3.13.3"
+        "typedoc": "^0.23.8",
+        "typedoc-plugin-markdown": "^3.13.4"
     }
 }

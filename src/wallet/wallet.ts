@@ -13,7 +13,9 @@ import { AddressToken } from "@defichain/whale-api-client/dist/api/address";
 import {
   Transaction,
   CustomMessage,
+  BlockScanner,
   TransactionConfig,
+  BlockScannerConfig,
 } from "@defichainwizard/custom-transactions";
 
 /**
@@ -152,6 +154,18 @@ class Wallet implements DFIWallet {
     };
 
     return await new Transaction(config).send(message);
+  }
+
+  /**
+   * Finds the last transactions on the blockchain.
+   */
+  async findLastTransactions() {
+    const config: BlockScannerConfig = {
+      client: this.client,
+      address: this.getAddress(),
+    };
+
+    return await new BlockScanner(config).findLastWizardConfiguration();
   }
 
   /**

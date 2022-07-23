@@ -10,7 +10,6 @@
 - [pause](CustomMessage.md#pause)
 - [poolpairs](CustomMessage.md#poolpairs)
 - [rules](CustomMessage.md#rules)
-- [telegram](CustomMessage.md#telegram)
 - [vaultId](CustomMessage.md#vaultid)
 - [version](CustomMessage.md#version)
 
@@ -22,7 +21,7 @@
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:18
+custom-transcation-library/dist/transactions/message.d.ts:14
 
 ___
 
@@ -32,7 +31,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:17
+custom-transcation-library/dist/transactions/message.d.ts:13
 
 ___
 
@@ -46,7 +45,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:19
+custom-transcation-library/dist/transactions/message.d.ts:15
 
 ___
 
@@ -56,17 +55,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:22
-
-___
-
-### telegram
-
-• **telegram**: `CustomMessageTelegram`
-
-#### Defined in
-
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:23
+custom-transcation-library/dist/transactions/message.d.ts:18
 
 ___
 
@@ -76,7 +65,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:16
+custom-transcation-library/dist/transactions/message.d.ts:12
 
 ___
 
@@ -86,4 +75,4 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:15
+custom-transcation-library/dist/transactions/message.d.ts:11
