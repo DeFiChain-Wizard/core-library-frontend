@@ -60,10 +60,10 @@ class Wallet implements DFIWallet {
   }
 
   public static async build(address: string, network = "mainnet") {
-    const wallet = new Wallet(network)
+    const wallet = new Wallet(network);
     await wallet.storage.storeAddress(address);
     await wallet.storage.storeNetwork(network);
-    return wallet
+    return wallet;
   }
 
   /**
@@ -105,7 +105,9 @@ class Wallet implements DFIWallet {
    */
   async getVault(id: string): Promise<LoanVaultActive> {
     // get vaults and filter active ones
-    const dfiVaults = (await this.client.address.listVault(await this.getAddress()))
+    const dfiVaults = (
+      await this.client.address.listVault(await this.getAddress())
+    )
       .filter(this.isActive)
       .filter((vault) => vault.vaultId === id);
     if (dfiVaults.length === 0)
@@ -162,7 +164,7 @@ class Wallet implements DFIWallet {
   async findLastTransactions() {
     const config: BlockScannerConfig = {
       client: this.client,
-      address: this.getAddress(),
+      address: await this.getAddress(),
     };
 
     return await new BlockScanner(config).findLastWizardConfiguration();
@@ -205,7 +207,10 @@ class Wallet implements DFIWallet {
    * @returns An array of tokens that are stored in the wallet.
    */
   async listTokens(): Promise<AddressToken[]> {
-    const tokens = await this.client.address.listToken(await this.getAddress(), 200);
+    const tokens = await this.client.address.listToken(
+      await this.getAddress(),
+      200
+    );
     const returnTokens: AddressToken[] = [];
     tokens.map((token) => {
       returnTokens.push(token);
@@ -218,7 +223,9 @@ class Wallet implements DFIWallet {
    * @returns The UTXO Balance of the wallet.
    */
   async getUTXOBalance(): Promise<Number> {
-    const balance = await this.client.address.getBalance(await this.getAddress());
+    const balance = await this.client.address.getBalance(
+      await this.getAddress()
+    );
     return Number(balance);
   }
 }

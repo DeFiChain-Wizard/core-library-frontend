@@ -33,7 +33,7 @@ import { Wallet, Seed } from "@defichainwizard/core";
 ## Create the wallet and get some data
 
 ```ts
-const wallet = new Wallet(myDFIAddress);
+const wallet = await Wallet.build(myDFIAddress)
 
 // returns the current UTXO balance
 const balance = await wallet.getUTXOBalance();

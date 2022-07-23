@@ -30,8 +30,7 @@
         "@defichain/whale-api-client": "2.54.1",
         "@defichain/whale-api-wallet": "2.54.1",
         "@defichainwizard/custom-transactions": "latest",
-        "@react-native-async-storage/async-storage": "^1.17.7",
-        "localstorage-slim": "^2.3.0"
+        "@react-native-async-storage/async-storage": "^1.17.7"
     },
     "devDependencies": {
         "typedoc": "^0.23.8",
