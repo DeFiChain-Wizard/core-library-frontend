@@ -40,7 +40,7 @@ Finds the last transactions on the blockchain.
 
 #### Defined in
 
-[src/wallet/wallet.ts:164](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L164)
+[src/wallet/wallet.ts:164](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L164)
 
 ___
 
@@ -62,7 +62,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[src/wallet/wallet.ts:97](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L97)
+[src/wallet/wallet.ts:97](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L97)
 
 ___
 
@@ -80,7 +80,7 @@ The current WhaleApiClient.
 
 #### Defined in
 
-[src/wallet/wallet.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L73)
+[src/wallet/wallet.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L73)
 
 ___
 
@@ -102,7 +102,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:122](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L122)
+[src/wallet/wallet.ts:122](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L122)
 
 ___
 
@@ -120,7 +120,7 @@ The network used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L89)
+[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L89)
 
 ___
 
@@ -142,7 +142,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[src/wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L81)
+[src/wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L81)
 
 ___
 
@@ -164,7 +164,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[src/wallet/wallet.ts:225](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L225)
+[src/wallet/wallet.ts:225](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L225)
 
 ___
 
@@ -192,7 +192,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:106](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L106)
+[src/wallet/wallet.ts:106](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L106)
 
 ___
 
@@ -214,7 +214,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[src/wallet/wallet.ts:191](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L191)
+[src/wallet/wallet.ts:191](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L191)
 
 ___
 
@@ -236,7 +236,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[src/wallet/wallet.ts:209](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L209)
+[src/wallet/wallet.ts:209](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L209)
 
 ___
 
@@ -266,7 +266,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[src/wallet/wallet.ts:146](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L146)
+[src/wallet/wallet.ts:146](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L146)
 
 ___
 
@@ -292,7 +292,7 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:135](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L135)
+[src/wallet/wallet.ts:135](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L135)
 
 ___
 
@@ -313,4 +313,4 @@ ___
 
 #### Defined in
 
-[src/wallet/wallet.ts:62](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1ed5ac4/src/wallet/wallet.ts#L62)
+[src/wallet/wallet.ts:62](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L62)

@@ -28,44 +28,50 @@ class DFIFactory {
     seed: Seed,
     passphrase: string
   ): Promise<WhaleWalletAccount> {
-    const wallet = DFIFactory.getWallet(
-      await seed.asArray(passphrase),
-      dfiWallet.getNetwork(),
-      dfiWallet.getClient()
-    );
-
-    if (wallet.wallet) {
-      logDebug("Wallet created!");
-    }
-
-    logDebug("Checking for addresses on wallet...");
-    const accounts = await wallet.wallet.discover();
-    if (accounts.length === 0)
-      throw new Error(
-        "No accounts found for the given account. Please check your seed phrase or make sure you have at least one transaction in that wallet."
+    try {
+      const wallet = DFIFactory.getWallet(
+        await seed.asArray(passphrase),
+        dfiWallet.getNetwork(),
+        dfiWallet.getClient()
       );
 
-    wallet.account = undefined;
-
-    logDebug(
-      `Checking if your address (${await dfiWallet.getAddress()}) is on the account...`
-    );
-    for (let i = 0; i < accounts.length; i++) {
-      const account = accounts[i];
-      const address = await account.getAddress();
-      if (address === (await dfiWallet.getAddress())) {
-        logDebug(`Address found: ${address}! Will return initialized wallet.`);
-        wallet.account = account;
-        break;
+      if (wallet.wallet) {
+        logDebug("Wallet created!");
       }
-    }
 
-    if (!wallet.account) {
-      throw new Error(
-        `Your given address (${await dfiWallet.getAddress()}) was not found on the wallet. Please check your config.`
+      logDebug("Checking for addresses on wallet...");
+      const accounts = await wallet.wallet.discover();
+      if (accounts.length === 0)
+        throw new Error(
+          "No accounts found for the given account. Please check your seed phrase or make sure you have at least one transaction in that wallet."
+        );
+
+      wallet.account = undefined;
+
+      logDebug(
+        `Checking if your address (${await dfiWallet.getAddress()}) is on the account...`
       );
+      for (let i = 0; i < accounts.length; i++) {
+        const account = accounts[i];
+        const address = await account.getAddress();
+        if (address === (await dfiWallet.getAddress())) {
+          logDebug(
+            `Address found: ${address}! Will return initialized wallet.`
+          );
+          wallet.account = account;
+          break;
+        }
+      }
+
+      if (!wallet.account) {
+        throw new Error(
+          `Your given address (${await dfiWallet.getAddress()}) was not found on the wallet. Please check your config.`
+        );
+      }
+      return wallet.account;
+    } catch (e) {
+      throw new Error('There was a problem creating your wallet. Please check your address and wether your provided seed is correct. If you are using anything but the mainnet, please make sure to provide the network explicitly.')
     }
-    return wallet.account;
   }
 
   /**
