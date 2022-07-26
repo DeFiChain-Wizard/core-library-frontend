@@ -10,6 +10,7 @@ import {
 } from "@defichain/jellyfish-wallet-mnemonic";
 import { WhaleApiClient } from "@defichain/whale-api-client";
 import { Seed, Wallet } from "../wallet";
+import { logDebug } from "@defichainwizard/custom-logging";
 
 const SEED_PHRASE_LENGTH = 24;
 
@@ -33,6 +34,11 @@ class DFIFactory {
       dfiWallet.getClient()
     );
 
+    if (wallet.wallet) {
+      logDebug("Wallet created!");
+    }
+
+    logDebug("Checking for addresses on wallet...");
     const accounts = await wallet.wallet.discover();
     if (accounts.length === 0)
       throw new Error(
@@ -40,14 +46,20 @@ class DFIFactory {
       );
 
     wallet.account = undefined;
+
+    logDebug(
+      `Checking if your address (${await dfiWallet.getAddress()}) is on the account...`
+    );
     for (let i = 0; i < accounts.length; i++) {
       const account = accounts[i];
       const address = await account.getAddress();
       if (address === (await dfiWallet.getAddress())) {
+        logDebug(`Address found: ${address}! Will return initialized wallet.`);
         wallet.account = account;
         break;
       }
     }
+
     if (!wallet.account) {
       throw new Error(
         `Your given address (${await dfiWallet.getAddress()}) was not found on the wallet. Please check your config.`
@@ -69,6 +81,7 @@ class DFIFactory {
     network: Network,
     client: WhaleApiClient
   ): JellyWallet {
+    logDebug(`Trying to create wallet on network "${network}".`);
     if (seed && seed.length === SEED_PHRASE_LENGTH) {
       return {
         wallet: new JellyfishWallet(

@@ -29,6 +29,7 @@
         "@defichain/jellyfish-wallet-mnemonic": "2.54.1",
         "@defichain/whale-api-client": "2.54.1",
         "@defichain/whale-api-wallet": "2.54.1",
+        "@defichainwizard/custom-logging": "latest",
         "@defichainwizard/custom-transactions": "latest",
         "@react-native-async-storage/async-storage": "^1.17.7"
     },
