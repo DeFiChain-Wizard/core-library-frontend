@@ -43,7 +43,7 @@ Error when the provided seed is not valid (array must have at least 24 words)
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L27)
+[src/wallet/seed.ts:27](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f330da5/src/wallet/seed.ts#L27)
 
 ## Methods
 
@@ -75,7 +75,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L66)
+[src/wallet/seed.ts:66](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f330da5/src/wallet/seed.ts#L66)
 
 ___
 
@@ -101,7 +101,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L99)
+[src/wallet/seed.ts:99](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f330da5/src/wallet/seed.ts#L99)
 
 ___
 
@@ -133,4 +133,4 @@ DFISeed.asString
 
 #### Defined in
 
-[core-library-frontend/src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b562052/src/wallet/seed.ts#L86)
+[src/wallet/seed.ts:86](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/f330da5/src/wallet/seed.ts#L86)
