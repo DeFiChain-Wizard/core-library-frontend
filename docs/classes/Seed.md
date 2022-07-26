@@ -12,10 +12,6 @@ This API only support addresses from the light wallet, which means that you will
 
 ## Table of contents
 
-### Constructors
-
-- [constructor](Seed.md#constructor)
-
 ### Methods
 
 - [asArray](Seed.md#asarray)
