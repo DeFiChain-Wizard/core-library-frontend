@@ -43,14 +43,14 @@ class DFIFactory {
     for (let i = 0; i < accounts.length; i++) {
       const account = accounts[i];
       const address = await account.getAddress();
-      if (address === await dfiWallet.getAddress()) {
+      if (address === (await dfiWallet.getAddress())) {
         wallet.account = account;
         break;
       }
     }
     if (!wallet.account) {
       throw new Error(
-        `Your given address (${dfiWallet.getAddress()}) was not found on the wallet. Please check your config.`
+        `Your given address (${await dfiWallet.getAddress()}) was not found on the wallet. Please check your config.`
       );
     }
     return wallet.account;
