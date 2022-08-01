@@ -54,6 +54,18 @@ await wallet.setCurrentVault(someVaultId);
 const vault = await wallet.getCurrentVault();
 ```
 
+## Get list of addresses
+
+If you don't have the address yet or you want to get a list of all addresses of your account, you could also ask for a list of addresses first:
+
+```ts
+// all you need is your seed and your passphrase for the seed decryption
+const seed = await Seed.build(mySeed, myPassphrase);
+
+// will return the list of addresses as string array
+const listOfAddresses = await Wallet.getAvailableAddresses(seed, myPassphrase);
+```
+
 ## Get some data from the vault
 
 The vault return data is aligned with the Jellyfish API response, so you can grab the data the same way.

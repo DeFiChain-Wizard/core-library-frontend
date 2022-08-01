@@ -17,6 +17,7 @@ import {
   TransactionConfig,
   BlockScannerConfig,
 } from "@defichainwizard/custom-transactions";
+import { logDebug, logInfo, logTable } from "@defichainwizard/custom-logging";
 
 /**
  * The DFI Wallet interface.
@@ -59,6 +60,13 @@ class Wallet implements DFIWallet {
     });
   }
 
+  /**
+   * Builds the wallet object.
+   *
+   * @param address The address is optional. If not set, it will try to get it from the account.
+   * @param network The network to use - default: mainnet
+   * @returns the wallet object
+   */
   public static async build(address: string, network = "mainnet") {
     const wallet = new Wallet(network);
     await wallet.storage.storeAddress(address);
@@ -88,6 +96,52 @@ class Wallet implements DFIWallet {
    */
   getNetwork(): Network {
     return this.network;
+  }
+
+  /**
+   * Returns the list of addresses for a given account.
+   *
+   * @param seed The seed for the account
+   * @param passphrase The passphrase for the seed
+   * @param network The network to search the addresses for
+   * @returns A list of addresses. Will return empty array if no addresses were found
+   */
+  static async getAvailableAddresses(
+    seed: Seed,
+    passphrase: string,
+    network = MainNet
+  ): Promise<Array<string>> {
+    logDebug("Getting all addresses");
+    const client = new WhaleApiClient({
+      url: OCEAN_URL,
+      version: OCEAN_VERSION,
+      network: network.name,
+    });
+
+    const wallet = DFIFactory.getWallet(
+      await seed.asArray(passphrase),
+      network,
+      client
+    );
+
+    const accounts = await wallet.wallet.discover();
+    logDebug(`Found ${accounts.length} addresses on this account:`);
+
+    // return empty array if no addresses were found.
+    if (accounts.length === 0) return [];
+
+    let addresses = [];
+
+    // looping through addresses
+    for (const account of accounts) {
+      const address = await account.getAddress();
+      logInfo(`Address found for account: ${address}`);
+      addresses.push(address);
+    }
+
+    // return found addresses
+    logTable(addresses);
+    return addresses;
   }
 
   /**

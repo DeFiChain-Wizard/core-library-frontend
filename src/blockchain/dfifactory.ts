@@ -70,7 +70,9 @@ class DFIFactory {
       }
       return wallet.account;
     } catch (e) {
-      throw new Error('There was a problem creating your wallet. Please check your address and wether your provided seed is correct. If you are using anything but the mainnet, please make sure to provide the network explicitly.')
+      throw new Error(
+        "There was a problem creating your wallet. Please check your address and wether your provided seed is correct. If you are using anything but the mainnet, please make sure to provide the network explicitly."
+      );
     }
   }
 
@@ -82,7 +84,7 @@ class DFIFactory {
    * @param client the {@link WhaleApiClient}
    * @returns The Jellywallet object.
    */
-  private static getWallet(
+  static getWallet(
     seed: string[],
     network: Network,
     client: WhaleApiClient

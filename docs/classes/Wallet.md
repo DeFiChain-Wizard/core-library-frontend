@@ -25,6 +25,7 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 - [sendTransaction](Wallet.md#sendtransaction)
 - [setCurrentVault](Wallet.md#setcurrentvault)
 - [build](Wallet.md#build)
+- [getAvailableAddresses](Wallet.md#getavailableaddresses)
 
 ## Methods
 
@@ -40,7 +41,7 @@ Finds the last transactions on the blockchain.
 
 #### Defined in
 
-[src/wallet/wallet.ts:164](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L164)
+[src/wallet/wallet.ts:218](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L218)
 
 ___
 
@@ -62,7 +63,7 @@ DFIWallet.getAddress
 
 #### Defined in
 
-[src/wallet/wallet.ts:97](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L97)
+[src/wallet/wallet.ts:151](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L151)
 
 ___
 
@@ -80,7 +81,7 @@ The current WhaleApiClient.
 
 #### Defined in
 
-[src/wallet/wallet.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L73)
+[src/wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L81)
 
 ___
 
@@ -102,7 +103,7 @@ DFIWallet.getCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:122](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L122)
+[src/wallet/wallet.ts:176](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L176)
 
 ___
 
@@ -120,7 +121,7 @@ The network used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L89)
+[src/wallet/wallet.ts:97](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L97)
 
 ___
 
@@ -142,7 +143,7 @@ DFIWallet.getNetworkAsString
 
 #### Defined in
 
-[src/wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L81)
+[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L89)
 
 ___
 
@@ -164,7 +165,7 @@ DFIWallet.getUTXOBalance
 
 #### Defined in
 
-[src/wallet/wallet.ts:225](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L225)
+[src/wallet/wallet.ts:279](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L279)
 
 ___
 
@@ -192,7 +193,7 @@ DFIWallet.getVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:106](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L106)
+[src/wallet/wallet.ts:160](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L160)
 
 ___
 
@@ -214,7 +215,7 @@ DFIWallet.getVaults
 
 #### Defined in
 
-[src/wallet/wallet.ts:191](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L191)
+[src/wallet/wallet.ts:245](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L245)
 
 ___
 
@@ -236,7 +237,7 @@ DFIWallet.listTokens
 
 #### Defined in
 
-[src/wallet/wallet.ts:209](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L209)
+[src/wallet/wallet.ts:263](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L263)
 
 ___
 
@@ -266,7 +267,7 @@ DFIWallet.sendTransaction
 
 #### Defined in
 
-[src/wallet/wallet.ts:146](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L146)
+[src/wallet/wallet.ts:200](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L200)
 
 ___
 
@@ -292,7 +293,7 @@ DFIWallet.setCurrentVault
 
 #### Defined in
 
-[src/wallet/wallet.ts:135](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L135)
+[src/wallet/wallet.ts:189](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L189)
 
 ___
 
@@ -300,17 +301,47 @@ ___
 
 ▸ `Static` **build**(`address`, `network?`): `Promise`<[`Wallet`](Wallet.md)\>
 
+Builds the wallet object.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `address` | `string` | `undefined` |
-| `network` | `string` | `"mainnet"` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `address` | `string` | `undefined` | The address is optional. If not set, it will try to get it from the account. |
+| `network` | `string` | `"mainnet"` | The network to use - default: mainnet |
 
 #### Returns
 
 `Promise`<[`Wallet`](Wallet.md)\>
 
+the wallet object
+
 #### Defined in
 
-[src/wallet/wallet.ts:62](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/9e5ada2/src/wallet/wallet.ts#L62)
+[src/wallet/wallet.ts:70](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L70)
+
+___
+
+### getAvailableAddresses
+
+▸ `Static` **getAvailableAddresses**(`seed`, `passphrase`, `network?`): `Promise`<`string`[]\>
+
+Returns the list of addresses for a given account.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `seed` | [`Seed`](Seed.md) | `undefined` | The seed for the account |
+| `passphrase` | `string` | `undefined` | The passphrase for the seed |
+| `network` | `Network` | `MainNet` | The network to search the addresses for |
+
+#### Returns
+
+`Promise`<`string`[]\>
+
+A list of addresses. Will return empty array if no addresses were found
+
+#### Defined in
+
+[src/wallet/wallet.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/1b67adb/src/wallet/wallet.ts#L109)
