@@ -18,6 +18,7 @@ This API only support addresses from the light wallet, which means that you will
 - [asEncrypted](Seed.md#asencrypted)
 - [asString](Seed.md#asstring)
 - [build](Seed.md#build)
+- [getSeedFromEncryptedString](Seed.md#getseedfromencryptedstring)
 
 ## Methods
 
@@ -49,7 +50,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[src/wallet/seed.ts:73](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3bd4fdd/src/wallet/seed.ts#L73)
+[src/wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L81)
 
 ___
 
@@ -75,7 +76,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[src/wallet/seed.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3bd4fdd/src/wallet/seed.ts#L109)
+[src/wallet/seed.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L117)
 
 ___
 
@@ -107,13 +108,13 @@ DFISeed.asString
 
 #### Defined in
 
-[src/wallet/seed.ts:96](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3bd4fdd/src/wallet/seed.ts#L96)
+[src/wallet/seed.ts:104](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L104)
 
 ___
 
 ### build
 
-▸ `Static` **build**(`seed`, `passphrase`): `Promise`<[`Seed`](Seed.md)\>
+▸ `Static` **build**(`seed`, `passphrase?`): `Promise`<[`Seed`](Seed.md)\>
 
 The Seed needs to be initialized with the seed and the passphrase.
 We are using the Builder pattern to allow async initialization
@@ -126,8 +127,8 @@ Error when the provided seed is not valid (array must have at least 24 words)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `seed` | `string`[] | The seed to be stored - provided as string array of 24 words. |
-| `passphrase` | `string` | The passphrase to encrypt the seed in the storage location. |
+| `seed` | `string` \| `string`[] | The seed to be stored - provided as string array of 24 words. |
+| `passphrase?` | `string` | The passphrase to encrypt the seed in the storage location. Passphrase is only needed when 24 words are passed. |
 
 #### Returns
 
@@ -137,4 +138,22 @@ The Seed object
 
 #### Defined in
 
-[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3bd4fdd/src/wallet/seed.ts#L32)
+[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L32)
+
+___
+
+### getSeedFromEncryptedString
+
+▸ `Static` **getSeedFromEncryptedString**(): `Promise`<[`Seed`](Seed.md)\>
+
+Returns the encrypted seed from the storage.
+
+#### Returns
+
+`Promise`<[`Seed`](Seed.md)\>
+
+the encrypted seed from the storage.
+
+#### Defined in
+
+[src/wallet/seed.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L126)
