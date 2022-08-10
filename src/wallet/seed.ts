@@ -25,16 +25,23 @@ class Seed implements DFISeed {
    * We are using the Builder pattern to allow async initialization
    *
    * @param seed The seed to be stored - provided as string array of 24 words.
-   * @param passphrase The passphrase to encrypt the seed in the storage location.
+   * @param passphrase The passphrase to encrypt the seed in the storage location. Passphrase is only needed when 24 words are passed.
    * @returns The Seed object
    * @throws Error when the provided seed is not valid (array must have at least 24 words)
    */
   public static async build(
-    seed: string[],
-    passphrase: string
+    seed: string[] | string,
+    passphrase?: string
   ): Promise<Seed> {
-    if (!isSeedValid(seed)) {
-      throw Error("Cannot create seed. Please check provided seed.");
+    // if seed is already passed as encrypted string don't do much
+    if (typeof seed === "string") {
+      return new Seed();
+    }
+
+    if (!isSeedValid(seed) || !passphrase) {
+      throw Error(
+        "Cannot create seed. Please check provided seed or passphrase."
+      );
     }
 
     // if seed words contain spaces, we'll have to trim the before.
@@ -52,6 +59,7 @@ class Seed implements DFISeed {
     await seedObj.initSeed(encryptedSeed);
     return seedObj;
   }
+
   /**
    * init a new Seed Object, this method is used by the builder Pattern
    * @param encryptedSeed The already encrypted Seed
@@ -108,6 +116,16 @@ class Seed implements DFISeed {
    */
   async asEncrypted() {
     return await this.storage.getSeed();
+  }
+
+  /**
+   * Returns the encrypted seed from the storage.
+   *
+   * @returns the encrypted seed from the storage.
+   */
+  public static async getSeedFromEncryptedString(): Promise<Seed> {
+    const storage = new DFIStorageUtility();
+    return Seed.build(await storage.getSeed());
   }
 }
 

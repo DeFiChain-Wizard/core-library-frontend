@@ -193,7 +193,7 @@ class Wallet implements DFIWallet {
   /**
    * Sends a custom transaction to your address, so that the backend can pick it up.
    * @param message The {@link CustomMessage} to send
-   * @param seed The seed object.
+   * @param seed The seed as encrypted string.
    * @param passphrase The passphrase to decrypt the seed.
    * @returns the transcation id.
    */

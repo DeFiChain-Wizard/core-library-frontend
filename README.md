@@ -88,6 +88,8 @@ The seed is **only** needed when you want to send a transaction. It will be encr
 This API only support addresses from the light wallet, which means that you will have to provide the 24 words.
 
 ```ts
+
+// mySeed can be an array of string (24 words) or the already encrypted string
 const mySeed = await Seed.build(mySeed, myPassword);
 
 // now we need the seed for some reason:
@@ -102,6 +104,13 @@ const seedString = await mySeed.asString(myPassword);
 const seedEncrypted = await mySeed.asEncrypted();
 ```
 
+## Grabbing the encrypted seed from storage
+```ts
+// returns a new Seed object based on the currently stored encrypted string.
+
+const mySeed = Seed.getSeedFromEncryptedString();
+
+```
 ## Send a custom transaction
 
 Now that we have the wallet and the seed in place, let's send a custom transaction.
