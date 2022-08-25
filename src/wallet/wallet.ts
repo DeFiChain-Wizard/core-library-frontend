@@ -213,9 +213,9 @@ class Wallet implements DFIWallet {
   }
 
   /**
-   * Finds the last transactions on the blockchain.
+   * Finds the last config transaction on the blockchain.
    */
-  async findLastTransactions() {
+  async findLastWizardConfiguration() {
     const config: BlockScannerConfig = {
       client: this.client,
       address: await this.getAddress(),
@@ -281,6 +281,10 @@ class Wallet implements DFIWallet {
       await this.getAddress()
     );
     return Number(balance);
+  }
+
+  async getLatestConfig() {
+    BlockScanner;
   }
 }
 
