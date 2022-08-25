@@ -50,7 +50,7 @@ DFISeed.asArray
 
 #### Defined in
 
-[src/wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L81)
+[src/wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L81)
 
 ___
 
@@ -76,7 +76,7 @@ DFISeed.asEncrypted
 
 #### Defined in
 
-[src/wallet/seed.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L117)
+[src/wallet/seed.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L117)
 
 ___
 
@@ -108,7 +108,7 @@ DFISeed.asString
 
 #### Defined in
 
-[src/wallet/seed.ts:104](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L104)
+[src/wallet/seed.ts:104](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L104)
 
 ___
 
@@ -138,7 +138,7 @@ The Seed object
 
 #### Defined in
 
-[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L32)
+[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L32)
 
 ___
 
@@ -156,4 +156,4 @@ the encrypted seed from the storage.
 
 #### Defined in
 
-[src/wallet/seed.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/c4927dd/src/wallet/seed.ts#L126)
+[src/wallet/seed.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L126)

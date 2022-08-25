@@ -2,6 +2,10 @@
 
 # Interface: CustomMessage
 
+## Indexable
+
+▪ [key: `string`]: `string` \| `number` \| `object`
+
 ## Table of contents
 
 ### Properties
@@ -21,7 +25,7 @@
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:14
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:15
 
 ___
 
@@ -31,7 +35,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:13
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:14
 
 ___
 
@@ -45,7 +49,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:15
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:16
 
 ___
 
@@ -55,7 +59,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:18
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:19
 
 ___
 
@@ -65,7 +69,7 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:12
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:13
 
 ___
 
@@ -75,4 +79,4 @@ ___
 
 #### Defined in
 
-node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:11
+node_modules/@defichainwizard/custom-transactions/dist/transactions/message.d.ts:12
