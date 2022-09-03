@@ -16,6 +16,7 @@ import {
   BlockScanner,
   TransactionConfig,
   BlockScannerConfig,
+  MessageUtils,
 } from "@defichainwizard/custom-transactions";
 import { logDebug, logInfo, logTable } from "@defichainwizard/custom-logging";
 
@@ -213,15 +214,29 @@ class Wallet implements DFIWallet {
   }
 
   /**
-   * Finds the last config transaction on the blockchain.
+   * Finds the last Wizard configuration on the block chain and returns it.
+   *
+   * @param seed The seed that was used for the encryption of the Custom Message
+   * @returns the custom message if one was found. It will return undefined if not Custom Message was found.
    */
-  async findLastWizardConfiguration() {
+  async findLastWizardConfiguration(
+    seed: string[]
+  ): Promise<CustomMessage | undefined> {
     const config: BlockScannerConfig = {
       client: this.client,
       address: await this.getAddress(),
     };
 
-    return await new BlockScanner(config).findLastWizardConfiguration();
+    const wizardTransaction = await new BlockScanner(
+      config
+    ).findLastWizardConfiguration();
+
+    if (!wizardTransaction) return undefined;
+
+    return MessageUtils.decryptAndDecompressMessage(
+      wizardTransaction.message.toString(),
+      seed
+    ) as CustomMessage;
   }
 
   /**
