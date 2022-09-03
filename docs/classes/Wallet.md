@@ -4,10 +4,6 @@
 
 The DFIWallet offers all functions to interact with the DFIWallet.
 
-## Implements
-
-- `DFIWallet`
-
 ## Table of contents
 
 ### Methods
@@ -32,17 +28,25 @@ The DFIWallet offers all functions to interact with the DFIWallet.
 
 ### findLastWizardConfiguration
 
-▸ **findLastWizardConfiguration**(): `Promise`<`undefined` \| `TransactionMessage`\>
+▸ **findLastWizardConfiguration**(`seed`): `Promise`<`undefined` \| [`CustomMessage`](../interfaces/CustomMessage.md)\>
 
-Finds the last config transaction on the blockchain.
+Finds the last Wizard configuration on the block chain and returns it.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `seed` | `string`[] | The seed that was used for the encryption of the Custom Message |
 
 #### Returns
 
-`Promise`<`undefined` \| `TransactionMessage`\>
+`Promise`<`undefined` \| [`CustomMessage`](../interfaces/CustomMessage.md)\>
+
+the custom message if one was found. It will return undefined if not Custom Message was found.
 
 #### Defined in
 
-[src/wallet/wallet.ts:218](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L218)
+[src/wallet/wallet.ts:203](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L203)
 
 ___
 
@@ -58,13 +62,9 @@ Returns the address used for this wallet. Usually starts with 'df1...'.
 
 The address used for this wallet.
 
-#### Implementation of
-
-DFIWallet.getAddress
-
 #### Defined in
 
-[src/wallet/wallet.ts:151](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L151)
+[src/wallet/wallet.ts:133](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L133)
 
 ___
 
@@ -82,7 +82,7 @@ The current WhaleApiClient.
 
 #### Defined in
 
-[src/wallet/wallet.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L81)
+[src/wallet/wallet.ts:63](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L63)
 
 ___
 
@@ -98,13 +98,9 @@ Returns the current vault.
 
 The vault currently stored vault to be used for management.
 
-#### Implementation of
-
-DFIWallet.getCurrentVault
-
 #### Defined in
 
-[src/wallet/wallet.ts:176](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L176)
+[src/wallet/wallet.ts:158](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L158)
 
 ___
 
@@ -118,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/wallet/wallet.ts:286](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L286)
+[src/wallet/wallet.ts:282](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L282)
 
 ___
 
@@ -136,7 +132,7 @@ The network used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:97](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L97)
+[src/wallet/wallet.ts:79](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L79)
 
 ___
 
@@ -152,13 +148,9 @@ Returns the network used for this wallet ('mainnet', 'testnet',...) as string.
 
 The network used for this wallet as string.
 
-#### Implementation of
-
-DFIWallet.getNetworkAsString
-
 #### Defined in
 
-[src/wallet/wallet.ts:89](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L89)
+[src/wallet/wallet.ts:71](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L71)
 
 ___
 
@@ -174,13 +166,9 @@ Returns the UTXO Balance of the wallet.
 
 The UTXO Balance of the wallet.
 
-#### Implementation of
-
-DFIWallet.getUTXOBalance
-
 #### Defined in
 
-[src/wallet/wallet.ts:279](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L279)
+[src/wallet/wallet.ts:275](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L275)
 
 ___
 
@@ -202,13 +190,9 @@ Returns a certain vault used for this wallet.
 
 The vault used for this wallet.
 
-#### Implementation of
-
-DFIWallet.getVault
-
 #### Defined in
 
-[src/wallet/wallet.ts:160](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L160)
+[src/wallet/wallet.ts:142](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L142)
 
 ___
 
@@ -224,13 +208,9 @@ Returns all vaults that have been created in this wallet.
 
 All vaults found for this wallet.
 
-#### Implementation of
-
-DFIWallet.getVaults
-
 #### Defined in
 
-[src/wallet/wallet.ts:245](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L245)
+[src/wallet/wallet.ts:241](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L241)
 
 ___
 
@@ -246,13 +226,9 @@ Returns a list of tokens stored in the wallet.
 
 An array of tokens that are stored in the wallet.
 
-#### Implementation of
-
-DFIWallet.listTokens
-
 #### Defined in
 
-[src/wallet/wallet.ts:263](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L263)
+[src/wallet/wallet.ts:259](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L259)
 
 ___
 
@@ -276,13 +252,9 @@ Sends a custom transaction to your address, so that the backend can pick it up.
 
 the transcation id.
 
-#### Implementation of
-
-DFIWallet.sendTransaction
-
 #### Defined in
 
-[src/wallet/wallet.ts:200](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L200)
+[src/wallet/wallet.ts:182](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L182)
 
 ___
 
@@ -302,13 +274,9 @@ Stores the current vault to be managed by the wizard.
 
 `void`
 
-#### Implementation of
-
-DFIWallet.setCurrentVault
-
 #### Defined in
 
-[src/wallet/wallet.ts:189](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L189)
+[src/wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L171)
 
 ___
 
@@ -333,7 +301,7 @@ the wallet object
 
 #### Defined in
 
-[src/wallet/wallet.ts:70](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L70)
+[src/wallet/wallet.ts:52](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L52)
 
 ___
 
@@ -359,4 +327,4 @@ A list of addresses. Will return empty array if no addresses were found
 
 #### Defined in
 
-[src/wallet/wallet.ts:109](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/wallet.ts#L109)
+[src/wallet/wallet.ts:91](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/wallet.ts#L91)

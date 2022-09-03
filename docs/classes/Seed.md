@@ -6,10 +6,6 @@ The Seed provides all operations for the seed management. It will implicitely en
 
 This API only support addresses from the light wallet, which means that you will have to provide the 24 words as an array.
 
-## Implements
-
-- `DFISeed`
-
 ## Table of contents
 
 ### Methods
@@ -44,13 +40,9 @@ It will crash - storing the encrypted seed during the instantiation might take 1
 
 the seed as array.
 
-#### Implementation of
-
-DFISeed.asArray
-
 #### Defined in
 
-[src/wallet/seed.ts:81](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L81)
+[src/wallet/seed.ts:75](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/seed.ts#L75)
 
 ___
 
@@ -70,13 +62,9 @@ It will crash - storing the encrypted seed during the instantiation might take 1
 
 the encyrpted seed.
 
-#### Implementation of
-
-DFISeed.asEncrypted
-
 #### Defined in
 
-[src/wallet/seed.ts:117](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L117)
+[src/wallet/seed.ts:111](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/seed.ts#L111)
 
 ___
 
@@ -102,13 +90,9 @@ It will crash - storing the encrypted seed during the instantiation might take 1
 
 the seed as comma-separated string.
 
-#### Implementation of
-
-DFISeed.asString
-
 #### Defined in
 
-[src/wallet/seed.ts:104](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L104)
+[src/wallet/seed.ts:98](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/seed.ts#L98)
 
 ___
 
@@ -138,7 +122,7 @@ The Seed object
 
 #### Defined in
 
-[src/wallet/seed.ts:32](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L32)
+[src/wallet/seed.ts:26](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/seed.ts#L26)
 
 ___
 
@@ -156,4 +140,4 @@ the encrypted seed from the storage.
 
 #### Defined in
 
-[src/wallet/seed.ts:126](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/b2a3819/src/wallet/seed.ts#L126)
+[src/wallet/seed.ts:120](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/5bf224c/src/wallet/seed.ts#L120)

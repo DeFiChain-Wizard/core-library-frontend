@@ -2,18 +2,12 @@ import { isSeedValid } from "../utils/helpers";
 import { MnemonicStorage } from "../utils/mnemonicstorage";
 import { DFIStorageUtility } from "../utils/storage";
 
-interface DFISeed {
-  asArray: (passphrase: string) => Promise<string[]>;
-  asString: (passphrase: string) => Promise<string>;
-  asEncrypted: () => Promise<string>;
-}
-
 /**
  * The Seed provides all operations for the seed management. It will implicitely encrypt and store the seed.
  *
  * This API only support addresses from the light wallet, which means that you will have to provide the 24 words as an array.
  */
-class Seed implements DFISeed {
+class Seed {
   private storage = new DFIStorageUtility();
 
   /**

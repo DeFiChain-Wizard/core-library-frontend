@@ -21,28 +21,9 @@ import {
 import { logDebug, logInfo, logTable } from "@defichainwizard/custom-logging";
 
 /**
- * The DFI Wallet interface.
- */
-interface DFIWallet {
-  getAddress: () => Promise<string>;
-  getNetworkAsString: () => Promise<string>;
-  getVaults: () => Promise<LoanVaultActive[]>;
-  getVault: (id: string) => Promise<LoanVaultActive>;
-  getCurrentVault: () => Promise<LoanVaultActive>;
-  listTokens: () => Promise<AddressToken[]>;
-  getUTXOBalance: () => Promise<Number>;
-  setCurrentVault: (id: string) => void;
-  sendTransaction: (
-    message: CustomMessage,
-    seed: Seed,
-    passphrase: string
-  ) => void;
-}
-
-/**
  * The DFIWallet offers all functions to interact with the DFIWallet.
  */
-class Wallet implements DFIWallet {
+class Wallet {
   private readonly storage = new DFIStorageUtility();
   private readonly client: WhaleApiClient;
   private readonly network: Network;
