@@ -198,7 +198,7 @@ class Wallet {
    * Finds the last Wizard configuration on the block chain and returns it.
    *
    * @param seed The seed that was used for the encryption of the Custom Message
-   * @returns the custom message if one was found. It will return undefined if not Custom Message was found.
+   * @returns the custom message if one was found. It will return undefined if no Custom Message was found.
    */
   async findLastWizardConfiguration(
     seed: string[]
@@ -213,6 +213,9 @@ class Wallet {
     ).findLastWizardConfiguration();
 
     if (!wizardTransaction) return undefined;
+
+    logDebug("Found a wizard transaction!");
+    logDebug(wizardTransaction);
 
     return MessageUtils.decryptAndDecompressMessage(
       wizardTransaction.message.toString(),
