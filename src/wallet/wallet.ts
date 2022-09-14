@@ -218,7 +218,7 @@ class Wallet {
     logDebug(wizardTransaction);
 
     return MessageUtils.decryptAndDecompressMessage(
-      wizardTransaction.message.toString(),
+      wizardTransaction.message,
       seed
     ) as CustomMessage;
   }
