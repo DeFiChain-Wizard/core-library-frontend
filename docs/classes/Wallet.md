@@ -46,7 +46,7 @@ the custom message if one was found. It will return undefined if no Custom Messa
 
 #### Defined in
 
-[src/wallet/wallet.ts:203](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L203)
+[src/wallet/wallet.ts:203](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L203)
 
 ___
 
@@ -64,7 +64,7 @@ The address used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:133](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L133)
+[src/wallet/wallet.ts:133](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L133)
 
 ___
 
@@ -82,7 +82,7 @@ The current WhaleApiClient.
 
 #### Defined in
 
-[src/wallet/wallet.ts:63](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L63)
+[src/wallet/wallet.ts:63](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L63)
 
 ___
 
@@ -100,7 +100,7 @@ The vault currently stored vault to be used for management.
 
 #### Defined in
 
-[src/wallet/wallet.ts:158](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L158)
+[src/wallet/wallet.ts:158](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L158)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/wallet/wallet.ts:285](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L285)
+[src/wallet/wallet.ts:285](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L285)
 
 ___
 
@@ -132,7 +132,7 @@ The network used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:79](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L79)
+[src/wallet/wallet.ts:79](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L79)
 
 ___
 
@@ -150,7 +150,7 @@ The network used for this wallet as string.
 
 #### Defined in
 
-[src/wallet/wallet.ts:71](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L71)
+[src/wallet/wallet.ts:71](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L71)
 
 ___
 
@@ -168,7 +168,7 @@ The UTXO Balance of the wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:278](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L278)
+[src/wallet/wallet.ts:278](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L278)
 
 ___
 
@@ -192,7 +192,7 @@ The vault used for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:142](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L142)
+[src/wallet/wallet.ts:142](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L142)
 
 ___
 
@@ -210,7 +210,7 @@ All vaults found for this wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:244](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L244)
+[src/wallet/wallet.ts:244](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L244)
 
 ___
 
@@ -228,7 +228,7 @@ An array of tokens that are stored in the wallet.
 
 #### Defined in
 
-[src/wallet/wallet.ts:262](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L262)
+[src/wallet/wallet.ts:262](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L262)
 
 ___
 
@@ -254,7 +254,7 @@ the transcation id.
 
 #### Defined in
 
-[src/wallet/wallet.ts:182](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L182)
+[src/wallet/wallet.ts:182](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L182)
 
 ___
 
@@ -276,7 +276,7 @@ Stores the current vault to be managed by the wizard.
 
 #### Defined in
 
-[src/wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L171)
+[src/wallet/wallet.ts:171](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L171)
 
 ___
 
@@ -301,7 +301,7 @@ the wallet object
 
 #### Defined in
 
-[src/wallet/wallet.ts:52](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L52)
+[src/wallet/wallet.ts:52](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L52)
 
 ___
 
@@ -327,4 +327,4 @@ A list of addresses. Will return empty array if no addresses were found
 
 #### Defined in
 
-[src/wallet/wallet.ts:91](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/e8b7cc3/src/wallet/wallet.ts#L91)
+[src/wallet/wallet.ts:91](https://github.com/DeFiChain-Wizard/core-library-frontend/blob/3d94698/src/wallet/wallet.ts#L91)
